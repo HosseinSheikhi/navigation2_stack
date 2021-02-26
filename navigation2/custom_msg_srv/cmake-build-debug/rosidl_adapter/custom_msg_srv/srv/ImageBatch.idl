@@ -1,0 +1,18 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from custom_msg_srv/srv/ImageBatch.srv
+// generated code does not contain a copyright notice
+
+#include "sensor_msgs/msg/Image.idl"
+
+module custom_msg_srv {
+  module srv {
+    struct ImageBatch_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    typedef sensor_msgs::msg::Image sensor_msgs__msg__Image;
+    typedef sensor_msgs__msg__Image sensor_msgs__msg__Image__2[2];
+    struct ImageBatch_Response {
+      sensor_msgs__msg__Image__2 data;
+    };
+  };
+};
