@@ -144,6 +144,8 @@ InflationLayer::updateBounds(
     *max_x = std::max(tmp_max_x, *max_x) + inflation_radius_;
     *max_y = std::max(tmp_max_y, *max_y) + inflation_radius_;
   }
+
+
 }
 
 void

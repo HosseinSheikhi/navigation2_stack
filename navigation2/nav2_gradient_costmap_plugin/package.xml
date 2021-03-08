@@ -16,6 +16,8 @@
   <depend>pluginlib</depend>
   <depend>rclcpp</depend>
   <depend>sensor_msgs</depend>
+  <depend>custom_msg_srv</depend>
+
 
   <export>
     <costmap_2d plugin="${prefix}/gradient_layer.xml" />

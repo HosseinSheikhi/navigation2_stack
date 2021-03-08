@@ -90,6 +90,8 @@ nav2_gradient_costmap_plugin::overhead_camera::overhead_camera::image_cb(sensor_
 
 }
 
+
+
 bool nav2_gradient_costmap_plugin::overhead_camera::overhead_camera::isGridFree(std::vector<std::vector<bool>> & isFree){
   /*
    * This function is my killer, my lover (Leo Cohen), spent two days to find the bug is here and why!
@@ -113,7 +115,7 @@ bool nav2_gradient_costmap_plugin::overhead_camera::overhead_camera::isGridFree(
             if (int(temp.at<float>(j,i)) > 128) {
               white_pixels_counter++;
             }
-      isFree[y_pixel][x_pixel]= (white_pixels_counter<5);
+      isFree[y_pixel][x_pixel]= (white_pixels_counter<40);
   }
 
   return true;

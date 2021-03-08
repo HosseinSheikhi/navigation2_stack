@@ -47,6 +47,7 @@
 #include "nav2_costmap_2d/layered_costmap.hpp"
 #include "nav_msgs/msg/occupancy_grid.hpp"
 #include "rclcpp/rclcpp.hpp"
+#include "custom_roi_srv/srv/roi.hpp"
 
 namespace nav2_costmap_2d
 {
@@ -75,7 +76,17 @@ public:
 private:
   void getParameters();
   void processMap(const nav_msgs::msg::OccupancyGrid & new_map);
-
+  void resizeCostmap(double static_map_origin_x,
+                            double static_map_origin_y,
+                            unsigned int static_map_width,
+                            unsigned int static_map_height,
+                     double static_map_resolution);
+  void ceiling_roi_callback(rclcpp::Client<custom_roi_srv::srv::ROI>::SharedFuture result_future);
+  double ceiling_min_x_{0};
+  double ceiling_min_y_{0};
+  double ceiling_max_x_{0};
+  double ceiling_max_y_{0};
+  bool ceiling_roi_received_{false};
   /**
    * @brief  Callback to update the costmap's map from the map_server
    * @param new_map The map to put into the costmap. The origin of the new
@@ -99,7 +110,7 @@ private:
 
   rclcpp::Subscription<nav_msgs::msg::OccupancyGrid>::SharedPtr map_sub_;
   rclcpp::Subscription<map_msgs::msg::OccupancyGridUpdate>::SharedPtr map_update_sub_;
-
+  rclcpp::Client<custom_roi_srv::srv::ROI>::SharedPtr ceiling_roi_client_;
   // Parameters
   std::string map_topic_;
   bool map_subscribe_transient_local_;

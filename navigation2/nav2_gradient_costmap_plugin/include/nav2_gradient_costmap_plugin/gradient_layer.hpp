@@ -52,6 +52,7 @@
 #include "algorithm"
 #include "std_msgs/msg/string.hpp"
 #include "sensor_msgs/msg/image.hpp"
+#include "custom_roi_srv/srv/roi.hpp"
 #include "cv_bridge/cv_bridge.h"
 #include "overhead_camera.h"
 #include "memory.h"
@@ -84,13 +85,17 @@ public:
 
 private:
   bool update_{ false};
-  double min_x_{0}, min_y_{0}, max_x_{0}, max_y_{0};
+  double roi_min_x_{0}, roi_min_y_{0}, roi_max_x_{0}, roi_max_y_{0};
   unsigned int ceiling_size_x_, ceiling_size_y_; /// desired size of x and y in meter based on ceiling cameras coverage, must divid by resolution, I think I should not change the resolution in this plugin
 
   std::vector<std::shared_ptr<overhead_camera::overhead_camera>> overhead_cameras_;
-
-
   std::vector<rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr> camera_subs_;
+
+  rclcpp::Service<custom_roi_srv::srv::ROI>::SharedPtr ceiling_ROI_srv_;
+  void handle_ceiling_roi_service(std::shared_ptr<custom_roi_srv::srv::ROI::Request> request,
+                                  std::shared_ptr<custom_roi_srv::srv::ROI::Response> response);
+
+  unsigned int counter = 0;
   double boxMin(std::vector<std::vector<double>> box, int index){
     /*
      * index shows which index of std::vector<double> have to be search to find the min
@@ -115,7 +120,7 @@ private:
     return *std::max_element(temp.begin(), temp.end());
   }
 
-  void calDesiredSize();
+  void calculateRoi();
   //parameters
   void getParameters();
   int num_overhead_cameras_;

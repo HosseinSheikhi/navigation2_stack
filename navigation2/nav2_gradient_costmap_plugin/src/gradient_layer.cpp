@@ -73,12 +73,17 @@ GradientLayer::onInitialize()
 
   getParameters();
   matchSize();
-
+  ceiling_ROI_srv_ = node_->create_service<custom_roi_srv::srv::ROI>("get_ceiling_roi",
+                                                                     std::bind(&GradientLayer::handle_ceiling_roi_service, this, std::placeholders::_1, std::placeholders::_2),
+                                                                     rmw_qos_profile_default);
   for(int cam_index=0; cam_index<num_overhead_cameras_;cam_index++){
   overhead_cameras_.emplace_back(std::make_shared<overhead_camera::overhead_camera>("cam "+std::to_string(cam_index+1), camera_poses_[cam_index][0], camera_poses_[cam_index][1], camera_poses_[cam_index][2]));
   camera_subs_.emplace_back(node_->create_subscription<sensor_msgs::msg::Image>(overhead_topics_[cam_index], rclcpp::SystemDefaultsQoS(), std::bind(&overhead_camera::overhead_camera::image_cb, overhead_cameras_[cam_index], std::placeholders::_1)));
   }
-  calDesiredSize();
+
+
+
+  calculateRoi();
 
 }
 
@@ -103,7 +108,18 @@ void GradientLayer::getParameters() {
 
 }
 
-void nav2_gradient_costmap_plugin::GradientLayer::calDesiredSize() {
+
+void nav2_gradient_costmap_plugin::GradientLayer::handle_ceiling_roi_service(std::shared_ptr<custom_roi_srv::srv::ROI::Request> request,
+                                std::shared_ptr<custom_roi_srv::srv::ROI::Response> response){
+  RCLCPP_INFO(node_->get_logger(), "GradientLayer: ceiling roi service called");
+  response->x_min = roi_min_x_;
+  response->y_min = roi_min_y_;
+  response->x_max = roi_max_x_;
+  response->y_max = roi_max_y_;
+}
+
+void nav2_gradient_costmap_plugin::GradientLayer::calculateRoi() {
+  RCLCPP_INFO(node_->get_logger(), "GradientLayer: calculating desired size");
   std::vector<std::vector<double>> FOVBoxes;
   double x1_min, y1_min, x1_max, y1_max;
 
@@ -112,18 +128,15 @@ void nav2_gradient_costmap_plugin::GradientLayer::calDesiredSize() {
     FOVBoxes.push_back(std::vector<double>{x1_min, y1_min, x1_max, y1_max});
   }
 
-  min_x_ = boxMin(FOVBoxes, 0);
-  double x_union_min = fmin(min_x_, static_cast<double>(getOriginX()));
+  roi_min_x_ = boxMin(FOVBoxes, 0);
+  roi_min_y_ = boxMin(FOVBoxes, 1);
 
-  min_y_ = boxMin(FOVBoxes, 1);
-  double y_union_min = fmin(min_y_, static_cast<double>(getOriginY()));
+  roi_max_x_ = boxMax(FOVBoxes, 2);
+  roi_max_y_ = boxMax(FOVBoxes, 3);
+  ceiling_size_x_ = static_cast<unsigned int>(fabs(roi_max_x_ - roi_min_x_)/resolution_);
+  ceiling_size_y_ = static_cast<unsigned int>(fabs(roi_max_y_ - roi_min_y_)/resolution_);
+  RCLCPP_INFO(node_->get_logger(), "GradientLayer: ceiling roi service called min(%f,%f) - max(%f,%f)",roi_min_x_,roi_min_y_, roi_max_x_, roi_max_y_ );
 
-  //TODO must be implemented as upper block but is not possible without changing origin
-  max_x_ = boxMax(FOVBoxes, 2)+2.0;
-  max_y_ = boxMax(FOVBoxes, 3)+2.0;
-  ceiling_size_x_ = static_cast<unsigned int>(fabs(max_x_ - x_union_min)/resolution_);
-  ceiling_size_y_ = static_cast<unsigned int>(fabs(max_y_ - y_union_min)/resolution_);
-  RCLCPP_INFO(node_->get_logger(), "desired size %u X %u", ceiling_size_x_, ceiling_size_y_);
 
 }
 
@@ -136,34 +149,13 @@ GradientLayer::updateBounds(
   double * min_y, double * max_x, double * max_y)
 {
   // NOTE: Think we should not do any thing here, cause our layer is the latest layer and it bounds will not effect on other layers
-  std::lock_guard<Costmap2D::mutex_t> guard(*getMutex());
 
-  if ( (size_x_ < ceiling_size_x_) || (size_y_ <ceiling_size_y_) ) {
-    Costmap2D * master = layered_costmap_->getCostmap();
-    layered_costmap_->resizeMap(fmax(ceiling_size_x_, size_x_), fmax(ceiling_size_y_, size_y_),
-                                master->getResolution(), master->getOriginX(), master->getOriginY(),
-                                true); // origin is symmetric cause camera is at 0,0
-    RCLCPP_INFO(node_->get_logger(), "GradientLayer: master_grid size after resizing: %d X %d",
-                master->getSizeInCellsX(),
-                master->getSizeInCellsY());
-
-    unsigned int index = 0;
-    // initialize the costmap with static data
-    for (unsigned int i = 0; i < size_y_; ++i) {
-      for (unsigned int j = 0; j < size_x_; ++j) {
-        costmap_[index] = NO_INFORMATION;
-        ++index;
-      }
-    }
-  }
-
-  *min_x = std::min(*min_x, min_x_);
-  *min_y = std::min(*min_y, min_y_);
-  *max_x = std::max(*max_x, max_x_);
-  *max_y = std::max(*max_y, max_y_);
-
-
+  *min_x = std::min(roi_min_x_,*min_x);
+  *min_y = std::min(roi_min_y_,*min_y);
+  *max_x = std::max(roi_max_x_,*max_x);
+  *max_y = std::max(roi_max_y_,*max_y);
 }
+
 
 // The method is called when footprint was changed.
 // Here it just resets need_recalculation_ variable.
@@ -186,14 +178,38 @@ GradientLayer::updateCosts(
 {
 
 
-  RCLCPP_INFO(node_->get_logger(), "GradientLayer: Size %u X %u ", size_x_, size_y_ );
-  RCLCPP_INFO(node_->get_logger(), "GradientLayer: Old updating box (%d , %d , %d , %d)", min_i, min_j, max_i, max_j);
+
+  unsigned char * master_costmap_ = master_grid.getCharMap();
+  //RCLCPP_INFO(node_->get_logger(), "GradientLayer: Size %u X %u ", size_x_, size_y_ );
   std::lock_guard<Costmap2D::mutex_t> guard(*getMutex());
 
-  if(layered_costmap_->getCostmap()->getOriginX() == 0.0 || layered_costmap_->getCostmap()->getOriginY() == 0.0){
-    RCLCPP_WARN(node_->get_logger(), "origin not set yet");
+  unsigned int temp_min_x, temp_min_y;
+  unsigned int temp_max_x, temp_max_y;
+  if(!(worldToMap(roi_min_x_, roi_min_y_,temp_min_x, temp_min_y) && worldToMap(roi_max_x_, roi_max_y_,temp_max_x,temp_max_y))){
+    RCLCPP_WARN(node_->get_logger(), "costmap layered not resized yet");
     return;
   }
+
+  if(counter++%5!=0){
+    RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with old one");
+    //RCLCPP_INFO(node_->get_logger(), "GradientLayer: ceiling roi min(%f,%f) - max(%f,%f)",roi_min_x_,roi_min_y_, roi_max_x_, roi_max_y_ );
+    unsigned int min_x_map, min_y_map;
+    worldToMap(roi_min_x_, roi_min_y_, min_x_map, min_y_map);
+
+    unsigned int max_x_map, max_y_map;
+    worldToMap(roi_max_x_, roi_max_y_, max_x_map, max_y_map);
+    //RCLCPP_INFO(node_->get_logger(), "GradientLayer: new updating box (%u , %u , %u , %u)", min_x_map, min_y_map, max_x_map, max_y_map);
+    updateWithOverwrite(master_grid, min_x_map, min_y_map, max_x_map, max_y_map);
+    return;
+  }
+  RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with new one");
+
+  unsigned int index=0;
+  // cause costmap_ is a union of map and ceiling, we dont have info for all the grids so init with no info
+  for (unsigned int i = 0; i < ceiling_size_y_; ++i)
+    for (unsigned int j = 0; j < ceiling_size_x_; ++j)
+      costmap_[getIndex(j + temp_min_x, i + temp_min_y)] = NO_INFORMATION;
+
 
   for(int cam_index = 0; cam_index<num_overhead_cameras_; cam_index++) {
     if (overhead_cameras_[cam_index]->isUpdate()) {
@@ -206,7 +222,8 @@ GradientLayer::updateCosts(
             unsigned int x_map, y_map;
             if (worldToMap(x_world, y_world, x_map, y_map)) {
                 unsigned int index = master_grid.getIndex(x_map, y_map);
-                costmap_[index] = (isFree[y_pixel][x_pixel] ? FREE_SPACE : LETHAL_OBSTACLE);
+                if(master_costmap_[index]==NO_INFORMATION)
+                  costmap_[index] = (isFree[y_pixel][x_pixel] ? FREE_SPACE : LETHAL_OBSTACLE);
             } else {
 //               RCLCPP_WARN(node_->get_logger(), "GradientLayer: worldToMap was not successful");
             }
@@ -222,12 +239,13 @@ GradientLayer::updateCosts(
     }
   }
 
+  //RCLCPP_INFO(node_->get_logger(), "GradientLayer: ceiling roi min(%f,%f) - max(%f,%f)",roi_min_x_,roi_min_y_, roi_max_x_, roi_max_y_ );
   unsigned int min_x_map, min_y_map;
-  worldToMap(min_x_, min_y_, min_x_map, min_y_map);
+  worldToMap(roi_min_x_, roi_min_y_, min_x_map, min_y_map);
 
   unsigned int max_x_map, max_y_map;
-  worldToMap(max_x_-2.0, max_y_-2.0, max_x_map, max_y_map);
-  RCLCPP_INFO(node_->get_logger(), "GradientLayer: new updating box (%u , %u , %u , %u)", min_x_map, min_y_map, max_x_map, max_y_map);
+  worldToMap(roi_max_x_, roi_max_y_, max_x_map, max_y_map);
+  //RCLCPP_INFO(node_->get_logger(), "GradientLayer: new updating box (%u , %u , %u , %u)", min_x_map, min_y_map, max_x_map, max_y_map);
   updateWithOverwrite(master_grid, min_x_map, min_y_map, max_x_map, max_y_map);
 
 
