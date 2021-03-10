@@ -261,9 +261,9 @@ StaticLayer::processMap(const nav_msgs::msg::OccupancyGrid & new_map)
 
 
   // cause costmap_ is a union of map and ceiling, we dont have info for all the grids
-//  for (unsigned int i = 0; i < size_y_; ++i)
-//    for (unsigned int j = 0; j < size_x_; ++j)
-//      costmap_[index++]=NO_INFORMATION;
+  for (unsigned int i = 0; i < size_y_; ++i)
+    for (unsigned int j = 0; j < size_x_; ++j)
+      costmap_[index++]=NO_INFORMATION;
 
   index = 0;
   // initialize the costmap with static data
@@ -438,16 +438,16 @@ StaticLayer::updateCosts(
     return;
   }
   RCLCPP_INFO(node_->get_logger(), "StaticLayer: Size %u X %u ", size_x_, size_y_ );
-  RCLCPP_INFO(node_->get_logger(), "StaticLayer: Old updating box (%d , %d , %d , %d)", min_i, min_j, max_i, max_j);
-  RCLCPP_INFO(node_->get_logger(), "StaticLayer: new updating box (%u , %u , %u , %u)", x_, y_, x_+width_, y_+height_);
+//  RCLCPP_INFO(node_->get_logger(), "StaticLayer: Old updating box (%d , %d , %d , %d)", min_i, min_j, max_i, max_j);
+  //RCLCPP_INFO(node_->get_logger(), "StaticLayer: new updating box (%u , %u , %u , %u)", x_, y_, x_+width_, y_+height_);
 
   if (!layered_costmap_->isRolling()) {
 
     // if not rolling, the layered costmap (master_grid) has same coordinates as this layer
     if (!use_maximum_) {
-      updateWithOverwrite(master_grid, x_, y_, x_+width_, y_+height_);
+      updateWithTrueOverwrite(master_grid, min_i, min_j, max_i, max_j);
     } else {
-      updateWithMax(master_grid, x_, y_, x_+width_, y_+height_);
+      updateWithMax(master_grid,  min_i, min_j, max_i, max_j);
     }
 
   } else {

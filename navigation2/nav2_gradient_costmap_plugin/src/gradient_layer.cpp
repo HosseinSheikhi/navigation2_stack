@@ -178,75 +178,77 @@ GradientLayer::updateCosts(
 {
 
 
-
-  unsigned char * master_costmap_ = master_grid.getCharMap();
-  //RCLCPP_INFO(node_->get_logger(), "GradientLayer: Size %u X %u ", size_x_, size_y_ );
-  std::lock_guard<Costmap2D::mutex_t> guard(*getMutex());
-
-  unsigned int temp_min_x, temp_min_y;
-  unsigned int temp_max_x, temp_max_y;
-  if(!(worldToMap(roi_min_x_, roi_min_y_,temp_min_x, temp_min_y) && worldToMap(roi_max_x_, roi_max_y_,temp_max_x,temp_max_y))){
+  // check if the layered_costmap is resized by static layer to cover ceiling layer
+  if(!(worldToMap(roi_min_x_, roi_min_y_,map_min_x, map_min_y) && worldToMap(roi_max_x_, roi_max_y_,map_max_x,map_max_y))){
     RCLCPP_WARN(node_->get_logger(), "costmap layered not resized yet");
     return;
   }
 
-  if(counter++%5!=0){
-    RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with old one");
-    //RCLCPP_INFO(node_->get_logger(), "GradientLayer: ceiling roi min(%f,%f) - max(%f,%f)",roi_min_x_,roi_min_y_, roi_max_x_, roi_max_y_ );
-    unsigned int min_x_map, min_y_map;
-    worldToMap(roi_min_x_, roi_min_y_, min_x_map, min_y_map);
+  std::lock_guard<Costmap2D::mutex_t> guard(*getMutex());
+  unsigned char * master_costmap_ = master_grid.getCharMap();
 
-    unsigned int max_x_map, max_y_map;
-    worldToMap(roi_max_x_, roi_max_y_, max_x_map, max_y_map);
-    //RCLCPP_INFO(node_->get_logger(), "GradientLayer: new updating box (%u , %u , %u , %u)", min_x_map, min_y_map, max_x_map, max_y_map);
-    updateWithOverwrite(master_grid, min_x_map, min_y_map, max_x_map, max_y_map);
-    return;
+
+
+//  if((++counter)%5!=0){
+//    RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with old one");
+//    updateWithOverwrite(master_grid, static_cast<int>(map_min_x), static_cast<int>(map_min_y), static_cast<int>(map_max_x), static_cast<int>(map_max_y));
+//    return;
+//  }
+//  RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with old one");
+  if(counter==0) {
+    // cause costmap_ is a union of map and ceiling, we dont have info for all the grids so init with no info
+    for (unsigned int i = 0; i < ceiling_size_y_; ++i)
+      for (unsigned int j = 0; j < ceiling_size_x_; ++j)
+        costmap_[getIndex(j + map_min_x, i + map_min_y)] = NO_INFORMATION;
+    counter++;
   }
-  RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with new one");
-
-  unsigned int index=0;
-  // cause costmap_ is a union of map and ceiling, we dont have info for all the grids so init with no info
-  for (unsigned int i = 0; i < ceiling_size_y_; ++i)
-    for (unsigned int j = 0; j < ceiling_size_x_; ++j)
-      costmap_[getIndex(j + temp_min_x, i + temp_min_y)] = NO_INFORMATION;
 
 
-  for(int cam_index = 0; cam_index<num_overhead_cameras_; cam_index++) {
-    if (overhead_cameras_[cam_index]->isUpdate()) {
-      std::vector<std::vector<bool>> isFree;
-      if(overhead_cameras_[cam_index]->isGridFree(isFree)){
-      for (unsigned int x_pixel = 0; x_pixel < 640; x_pixel++) {
-        for (unsigned int y_pixel = 0; y_pixel < 480; y_pixel++) {
-          double x_world, y_world;
-          if (overhead_cameras_[cam_index]->pixelToWorld(x_pixel, y_pixel, x_world,y_world)) {
-            unsigned int x_map, y_map;
-            if (worldToMap(x_world, y_world, x_map, y_map)) {
-                unsigned int index = master_grid.getIndex(x_map, y_map);
-                if(master_costmap_[index]==NO_INFORMATION)
-                  costmap_[index] = (isFree[y_pixel][x_pixel] ? FREE_SPACE : LETHAL_OBSTACLE);
-            } else {
-//               RCLCPP_WARN(node_->get_logger(), "GradientLayer: worldToMap was not successful");
+  if(last_origin_x_!= origin_x_ || last_origin_y_!=origin_y_ || last_size_x_ != size_x_ || last_size_y_ != size_y_ || last_resolution_ != resolution_) {
+    RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with new one");
+
+    for (int cam_index = 0; cam_index < num_overhead_cameras_; cam_index++) {
+      if (overhead_cameras_[cam_index]->isUpdate()) {
+        std::vector<std::vector<bool>> isFree;
+        if (overhead_cameras_[cam_index]->isGridFree(isFree)) {
+          for (unsigned int x_pixel = 0; x_pixel < 640; x_pixel++) {
+            for (unsigned int y_pixel = 0; y_pixel < 480; y_pixel++) {
+              double x_world, y_world;
+              if (overhead_cameras_[cam_index]->pixelToWorld(
+                      x_pixel, y_pixel, x_world, y_world)) {
+                unsigned int x_map, y_map;
+                if (worldToMap(x_world, y_world, x_map, y_map)) {
+                  unsigned int index = master_grid.getIndex(x_map, y_map);
+                  if (master_costmap_[index] == NO_INFORMATION) {
+                    costmap_[index] =
+                        (isFree[y_pixel][x_pixel] ? FREE_SPACE
+                                                  : LETHAL_OBSTACLE);
+                  }else{
+                    costmap_[index] = NO_INFORMATION;
+                  }
+                } else {
+                  //               RCLCPP_WARN(node_->get_logger(), "GradientLayer: worldToMap was not successful");
+                }
+              } else {
+                RCLCPP_WARN(node_->get_logger(),
+                            "GradientLayer: pixelToWorld was not successful");
+              }
             }
-          } else {
-            RCLCPP_WARN(node_->get_logger(),
-                        "GradientLayer: pixelToWorld was not successful");
           }
+        } else {
+          RCLCPP_WARN(node_->get_logger(),
+                      "GradientLayer: Mat was empty in isGreedFree function. camera number: %d",
+                      cam_index + 1);
         }
       }
-      }else{
-        RCLCPP_WARN(node_->get_logger(), "GradientLayer: Mat was empty in isGreedFree function. camera number: %d", cam_index+1);
-      }
     }
+    last_origin_x_ = origin_x_;
+    last_origin_y_ = origin_y_;
+    last_size_x_ = size_x_;
+    last_size_y_ = size_y_;
+    last_resolution_ = resolution_;
   }
-
-  //RCLCPP_INFO(node_->get_logger(), "GradientLayer: ceiling roi min(%f,%f) - max(%f,%f)",roi_min_x_,roi_min_y_, roi_max_x_, roi_max_y_ );
-  unsigned int min_x_map, min_y_map;
-  worldToMap(roi_min_x_, roi_min_y_, min_x_map, min_y_map);
-
-  unsigned int max_x_map, max_y_map;
-  worldToMap(roi_max_x_, roi_max_y_, max_x_map, max_y_map);
-  //RCLCPP_INFO(node_->get_logger(), "GradientLayer: new updating box (%u , %u , %u , %u)", min_x_map, min_y_map, max_x_map, max_y_map);
-  updateWithOverwrite(master_grid, min_x_map, min_y_map, max_x_map, max_y_map);
+  updateWithOverwrite(master_grid, static_cast<int>(map_min_x), static_cast<int>(map_min_y), static_cast<int>(map_max_x), static_cast<int>(map_max_y));
 
 
 }

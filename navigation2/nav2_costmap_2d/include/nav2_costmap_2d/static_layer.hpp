@@ -82,10 +82,10 @@ private:
                             unsigned int static_map_height,
                      double static_map_resolution);
   void ceiling_roi_callback(rclcpp::Client<custom_roi_srv::srv::ROI>::SharedFuture result_future);
-  double ceiling_min_x_{0};
-  double ceiling_min_y_{0};
-  double ceiling_max_x_{0};
-  double ceiling_max_y_{0};
+  double ceiling_min_x_{10000};
+  double ceiling_min_y_{10000};
+  double ceiling_max_x_{-10000};
+  double ceiling_max_y_{-10000};
   bool ceiling_roi_received_{false};
   /**
    * @brief  Callback to update the costmap's map from the map_server
