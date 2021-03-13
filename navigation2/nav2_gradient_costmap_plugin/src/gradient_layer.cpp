@@ -180,7 +180,7 @@ GradientLayer::updateCosts(
 
   // check if the layered_costmap is resized by static layer to cover ceiling layer
   if(!(worldToMap(roi_min_x_, roi_min_y_,map_min_x, map_min_y) && worldToMap(roi_max_x_, roi_max_y_,map_max_x,map_max_y))){
-    RCLCPP_WARN(node_->get_logger(), "costmap layered not resized yet");
+    RCLCPP_WARN(node_->get_logger(), "costmap layered is not resized yet");
     return;
   }
 
@@ -188,13 +188,6 @@ GradientLayer::updateCosts(
   unsigned char * master_costmap_ = master_grid.getCharMap();
 
 
-
-//  if((++counter)%5!=0){
-//    RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with old one");
-//    updateWithOverwrite(master_grid, static_cast<int>(map_min_x), static_cast<int>(map_min_y), static_cast<int>(map_max_x), static_cast<int>(map_max_y));
-//    return;
-//  }
-//  RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with old one");
   if(counter==0) {
     // cause costmap_ is a union of map and ceiling, we dont have info for all the grids so init with no info
     for (unsigned int i = 0; i < ceiling_size_y_; ++i)
@@ -204,7 +197,7 @@ GradientLayer::updateCosts(
   }
 
 
-  if(last_origin_x_!= origin_x_ || last_origin_y_!=origin_y_ || last_size_x_ != size_x_ || last_size_y_ != size_y_ || last_resolution_ != resolution_) {
+  if(last_origin_x_!= origin_x_ || last_origin_y_!=origin_y_ || last_size_x_ != size_x_ || last_size_y_ != size_y_ || last_resolution_ != resolution_ || counter++%10==0) {
     RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with new one");
 
     for (int cam_index = 0; cam_index < num_overhead_cameras_; cam_index++) {
