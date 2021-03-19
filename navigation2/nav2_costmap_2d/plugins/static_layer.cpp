@@ -168,10 +168,10 @@ StaticLayer::getParameters()
 }
 void StaticLayer::ceiling_roi_callback(rclcpp::Client<custom_roi_srv::srv::ROI>::SharedFuture result_future){
   std::shared_ptr<custom_roi_srv::srv::ROI::Response> response = result_future.get();
-  ceiling_min_x_ = response->x_min; //-4.361635; //
-  ceiling_min_y_ = response->y_min; //-5.512049; //
-  ceiling_max_x_ = response->x_max; //14.351147; //
-  ceiling_max_y_ = response->y_max; //-0.477462; //
+  ceiling_min_x_ = response->x_min;
+  ceiling_min_y_ = response->y_min;
+  ceiling_max_x_ = response->x_max;
+  ceiling_max_y_ = response->y_max;
   if(ceiling_min_x_!=0 || ceiling_min_y_!=0 || ceiling_max_x_!=0 || ceiling_max_y_!=0)
     ceiling_roi_received_ = true;
 
@@ -237,7 +237,7 @@ void StaticLayer::resizeCostmap(double static_map_origin_x,
 void
 StaticLayer::processMap(const nav_msgs::msg::OccupancyGrid & new_map)
 {
-
+  std::lock_guard<Costmap2D::mutex_t> guard(*getMutex());
   RCLCPP_DEBUG(
       node_->get_logger(),
       "StaticLayer: Received a %d X %d map at %f m/pix", new_map.info.width,
@@ -254,7 +254,7 @@ StaticLayer::processMap(const nav_msgs::msg::OccupancyGrid & new_map)
   unsigned int size_y = new_map.info.height;
 
   unsigned int index = 0;
-  std::lock_guard<Costmap2D::mutex_t> guard(*getMutex());
+
   unsigned int drift_x;
   unsigned int drift_y;
   worldToMap(new_map.info.origin.position.x, new_map.info.origin.position.y, drift_x, drift_y);

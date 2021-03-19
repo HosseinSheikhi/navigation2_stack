@@ -103,6 +103,7 @@ private:
   void handle_ceiling_roi_service(std::shared_ptr<custom_roi_srv::srv::ROI::Request> request,
                                   std::shared_ptr<custom_roi_srv::srv::ROI::Response> response);
 
+
   unsigned int counter = 0;
   double boxMin(std::vector<std::vector<double>> box, int index){
     /*

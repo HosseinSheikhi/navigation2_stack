@@ -98,6 +98,7 @@ bool nav2_gradient_costmap_plugin::overhead_camera::overhead_camera::isGridFree(
    * First of all this function used to outputs a bool instead of a 2d-vector of bools, and I had to call it in every iteration, about 640*480 times!
    * And when it was the case, it was likely that a callback be called when we were in this function, so I used the mutex, and to prevent from overhead of calling this function I changed it to be called once for each camera
    */
+  int neighbour_size = 5;
   cv::Mat temp;
   segmented_image_.copyTo(temp);
   if(temp.empty() || temp.cols!= static_cast<int>(image_width_) || temp.rows != static_cast<int>(image_height_) ){
@@ -110,8 +111,8 @@ bool nav2_gradient_costmap_plugin::overhead_camera::overhead_camera::isGridFree(
   for( int x_pixel = 0 ; x_pixel< static_cast<int>(image_width_); x_pixel++)
     for( int y_pixel = 0; y_pixel< static_cast<int>(image_height_); y_pixel++){
       white_pixels_counter=0;
-      for( int i = (std::max(x_pixel-5, 0)); i<= std::min(x_pixel+5,static_cast<int>(image_width_)-1); i++)
-        for( int j = std::max(y_pixel-5, 0); j<= std::min(y_pixel+5,static_cast<int>(image_height_)-1); j++)
+      for( int i = std::max(x_pixel-neighbour_size, 0); i<= std::min(x_pixel+neighbour_size,static_cast<int>(image_width_)-1); i++)
+        for( int j = std::max(y_pixel-neighbour_size, 0); j<= std::min(y_pixel+neighbour_size,static_cast<int>(image_height_)-1); j++)
             if (int(temp.at<float>(j,i)) > 128) {
               white_pixels_counter++;
             }
