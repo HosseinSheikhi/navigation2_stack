@@ -69,46 +69,25 @@ GradientLayer::GradientLayer()
 void
 GradientLayer::onInitialize()
 {
-  declareParameter("enabled", rclcpp::ParameterValue(true));
-  declareParameter("num_overhead_cameras", rclcpp::ParameterValue(0));
-  declareParameter("overhead_topics", rclcpp::ParameterValue(overhead_topics_));
-  declareParameter("camera_poses", rclcpp::ParameterValue(""));
+  RCLCPP_INFO(node_->get_logger(), "GradientLayer: initialized");
 
+  declareParameter("enabled", rclcpp::ParameterValue(true));
 
   getParameters();
   matchSize();
+
+  ceiling_map_sub_ = node_->create_subscription<nav_msgs::msg::OccupancyGrid>("/ceiling_perception/map", rclcpp::SystemDefaultsQoS(), std::bind(&GradientLayer::ceiling_map_callback, this, std::placeholders::_1));
   // gives service to the static layer - cause static layer is the only one that changes them costmap size
   ceiling_ROI_srv_ = node_->create_service<custom_roi_srv::srv::ROI>("get_ceiling_roi",
                                                                      std::bind(&GradientLayer::handle_ceiling_roi_service, this, std::placeholders::_1, std::placeholders::_2),
                                                                      rmw_qos_profile_default);
-  for(int cam_index=0; cam_index<num_overhead_cameras_;cam_index++){
-  overhead_cameras_.emplace_back(std::make_shared<overhead_camera::overhead_camera>("cam "+std::to_string(cam_index+1), camera_poses_[cam_index][0], camera_poses_[cam_index][1], camera_poses_[cam_index][2]));
-  camera_subs_.emplace_back(node_->create_subscription<sensor_msgs::msg::Image>(overhead_topics_[cam_index], rclcpp::SystemDefaultsQoS(), std::bind(&overhead_camera::overhead_camera::image_cb, overhead_cameras_[cam_index], std::placeholders::_1)));
-  }
 
-  calculateRoi();
+
 
 }
 
 void GradientLayer::getParameters() {
-
   node_->get_parameter(name_ + "." + "enabled", enabled_);
-  node_->get_parameter(name_ + "." + "num_overhead_cameras", num_overhead_cameras_);
-  node_->get_parameter(name_ + "." + "overhead_topics", overhead_topics_);
-
-  if(overhead_topics_.size() != static_cast<unsigned long>(num_overhead_cameras_))
-    RCLCPP_WARN(node_->get_logger(), "GradientLayer: number of overhead cameras doesn't match with overhead topics");
-
-
-  std::string camera_poses_str;
-  node_->get_parameter(name_ + "." + "camera_poses", camera_poses_str);
-  std::string error;
-  camera_poses_ = nav2_costmap_2d::parseVVF(camera_poses_str, error);
-  if (!error.empty())
-    RCLCPP_WARN(node_->get_logger(), "GradientLayer: error in parsing camera poses %s", error.c_str());
-  if(camera_poses_.size() != static_cast<unsigned long>(num_overhead_cameras_))
-    RCLCPP_WARN(node_->get_logger(), "GradientLayer: number of overhead cameras doesn't match with cameras positions");
-
 }
 
 
@@ -121,27 +100,6 @@ void nav2_gradient_costmap_plugin::GradientLayer::handle_ceiling_roi_service(std
   response->y_max = roi_max_y_;
 }
 
-void nav2_gradient_costmap_plugin::GradientLayer::calculateRoi() {
-  RCLCPP_INFO(node_->get_logger(), "GradientLayer: calculating desired size");
-  std::vector<std::vector<double>> FOVBoxes;
-  double x1_min, y1_min, x1_max, y1_max;
-
-  for(int cam_index=0; cam_index<num_overhead_cameras_;cam_index++) {
-    overhead_cameras_[cam_index]->worldFOV(x1_min, y1_min, x1_max, y1_max);
-    FOVBoxes.push_back(std::vector<double>{x1_min, y1_min, x1_max, y1_max});
-  }
-
-  roi_min_x_ = boxMin(FOVBoxes, 0);
-  roi_min_y_ = boxMin(FOVBoxes, 1);
-
-  roi_max_x_ = boxMax(FOVBoxes, 2);
-  roi_max_y_ = boxMax(FOVBoxes, 3);
-  ceiling_size_x_ = static_cast<unsigned int>(fabs(roi_max_x_ - roi_min_x_)/resolution_);
-  ceiling_size_y_ = static_cast<unsigned int>(fabs(roi_max_y_ - roi_min_y_)/resolution_);
-  RCLCPP_INFO(node_->get_logger(), "GradientLayer: ceiling roi service called min(%f,%f) - max(%f,%f)",roi_min_x_,roi_min_y_, roi_max_x_, roi_max_y_ );
-
-
-}
 
 // The method is called to ask the plugin: which area of costmap it needs to update.
 // Inside this method window bounds are re-calculated if need_recalculation_ is true
@@ -173,24 +131,35 @@ GradientLayer::onFootprintChanged()
 // The method is called when costmap recalculation is required.
 // It updates the costmap within its window bounds.
 
+void GradientLayer::ceiling_map_callback(nav_msgs::msg::OccupancyGrid::SharedPtr map){
+  RCLCPP_INFO(node_->get_logger(), "map received");
+  ceiling_origin_x_ = map->info.origin.position.x;
+  ceiling_origin_y_ = map->info.origin.position.y;
+  ceiling_size_x_ = map->info.width;
+  ceiling_size_y_ = map->info.height;
+  ceiling_resolution_ = map->info.resolution;
+  ceiling_map_ = map->data;
+
+  roi_min_x_ = ceiling_origin_x_;
+  roi_min_y_ = ceiling_origin_y_;
+  roi_max_x_ =ceiling_origin_x_ + ceiling_size_x_*ceiling_resolution_ ;
+  roi_max_y_ = ceiling_origin_y_ + ceiling_size_y_*ceiling_resolution_;
+}
+
+
 void
 GradientLayer::updateCosts(
   nav2_costmap_2d::Costmap2D & master_grid, int min_i, int min_j,
   int max_i,
   int max_j)
 {
-  std::lock_guard<Costmap2D::mutex_t> guard(*getMutex());
   RCLCPP_INFO(node_->get_logger(), "GradientLayer: Update cost called");
-
-  auto start = high_resolution_clock::now();
 
   // check if the layered_costmap is resized by static layer to cover ceiling layer
   if(!(worldToMap(roi_min_x_, roi_min_y_,map_min_x, map_min_y) && worldToMap(roi_max_x_, roi_max_y_,map_max_x,map_max_y))){
     RCLCPP_WARN(node_->get_logger(), "costmap layered is not resized yet");
     return;
   }
-
-  unsigned char * master_costmap_ = master_grid.getCharMap();
 
   if(counter==0) {
     // cause costmap_ is a union of map and ceiling, we dont have info for all the grids so init with no info
@@ -200,55 +169,24 @@ GradientLayer::updateCosts(
     counter++;
   }
 
-
-  if(last_origin_x_!= origin_x_ || last_origin_y_!=origin_y_ || last_size_x_ != size_x_ || last_size_y_ != size_y_ || last_resolution_ != resolution_ || counter++%10==0) {
+  unsigned int biased_x, biased_y;
+  worldToMap(ceiling_origin_x_, ceiling_origin_y_, biased_x, biased_y);
+  unsigned int biased_index = master_grid.getIndex(biased_x, biased_y);
+  unsigned int index =0;
+  if(!ceiling_map_.empty()) { //means no map received
     RCLCPP_INFO(node_->get_logger(), "GradientLayer: update with new one");
-    for (int cam_index = 0; cam_index < num_overhead_cameras_; cam_index++) {
-      if (overhead_cameras_[cam_index]->isUpdate()) {
-        std::vector<std::vector<bool>> isFree;
-        if (overhead_cameras_[cam_index]->isGridFree(isFree)) {
-          for (unsigned int x_pixel = 0; x_pixel < 640; x_pixel++) {
-            for (unsigned int y_pixel = 0; y_pixel < 480; y_pixel++) {
-              double x_world, y_world;
-              if (overhead_cameras_[cam_index]->pixelToWorld(
-                      x_pixel, y_pixel, x_world, y_world)) {
-                unsigned int x_map, y_map;
-                if (worldToMap(x_world, y_world, x_map, y_map)) {
-                  unsigned int index = master_grid.getIndex(x_map, y_map);
-                  if (master_costmap_[index] == NO_INFORMATION) {
-                    costmap_[index] =
-                        (isFree[y_pixel][x_pixel] ? FREE_SPACE
-                                                  : LETHAL_OBSTACLE);
-                  }else{
-                    costmap_[index] = NO_INFORMATION;
-                  }
-                } else {
-                  //               RCLCPP_WARN(node_->get_logger(), "GradientLayer: worldToMap was not successful");
-                }
-              } else {
-                RCLCPP_WARN(node_->get_logger(),
-                            "GradientLayer: pixelToWorld was not successful");
-              }
-            }
-          }
-        } else {
-          RCLCPP_WARN(node_->get_logger(),
-                      "GradientLayer: Mat was empty in isGreedFree function. camera number: %d",
-                      cam_index + 1);
-        }
+    for (unsigned int i = 0; i < ceiling_size_y_; ++i)
+      for (unsigned int j = 0; j < ceiling_size_x_; ++j) { // its crucial to iterate in a row major
+        if (static_cast<int8_t>(ceiling_map_[index]) == 0)
+          costmap_[getIndex(j+map_min_x, i+map_min_y)] = FREE_SPACE;
+        else if (static_cast<int8_t>(ceiling_map_[index]) == 100)
+          costmap_[getIndex(j+map_min_x, i+map_min_y)] = LETHAL_OBSTACLE;
+        index++;
       }
-    }
-    last_origin_x_ = origin_x_;
-    last_origin_y_ = origin_y_;
-    last_size_x_ = size_x_;
-    last_size_y_ = size_y_;
-    last_resolution_ = resolution_;
   }
+
   updateWithOverwrite(master_grid, static_cast<int>(map_min_x), static_cast<int>(map_min_y), static_cast<int>(map_max_x), static_cast<int>(map_max_y));
 
-  auto stop = high_resolution_clock::now();
-  auto duration = duration_cast<microseconds>(stop - start);
-  RCLCPP_INFO(node_->get_logger(), "GradientLayer: Time taken by function: %d microseconds", duration.count());
   RCLCPP_INFO(node_->get_logger(), "GradientLayer: Update cost end");
 }
 

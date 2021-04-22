@@ -51,12 +51,14 @@
 #include "opencv4/opencv2/opencv.hpp"
 #include "algorithm"
 #include "std_msgs/msg/string.hpp"
+#include "nav_msgs/msg/occupancy_grid.hpp"
 #include "sensor_msgs/msg/image.hpp"
 #include "custom_roi_srv/srv/roi.hpp"
 #include "cv_bridge/cv_bridge.h"
 #include "overhead_camera.h"
 #include "memory.h"
 #include <algorithm>
+
 namespace nav2_gradient_costmap_plugin
 {
 
@@ -90,14 +92,15 @@ private:
   unsigned int map_min_x, map_min_y;
   unsigned int map_max_x, map_max_y;
 
-  double last_origin_x_;
-  double last_origin_y_;
+  double ceiling_origin_x_;
+  double ceiling_origin_y_;
   unsigned int last_size_x_;
   unsigned int last_size_y_;
-  double last_resolution_;
+  double ceiling_resolution_;
 
-  std::vector<std::shared_ptr<overhead_camera::overhead_camera>> overhead_cameras_;
-  std::vector<rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr> camera_subs_;
+  rclcpp::Subscription<nav_msgs::msg::OccupancyGrid>::SharedPtr ceiling_map_sub_;
+  void ceiling_map_callback(nav_msgs::msg::OccupancyGrid::SharedPtr map);
+  std::vector<signed char> ceiling_map_;
 
   rclcpp::Service<custom_roi_srv::srv::ROI>::SharedPtr ceiling_ROI_srv_;
   void handle_ceiling_roi_service(std::shared_ptr<custom_roi_srv::srv::ROI::Request> request,
@@ -105,36 +108,9 @@ private:
 
 
   unsigned int counter = 0;
-  double boxMin(std::vector<std::vector<double>> box, int index){
-    /*
-     * index shows which index of std::vector<double> have to be search to find the min
-     * if index=0 will return the minimum x_min
-     */
-    std::vector<double> temp;
-    for(auto const vec : box)
-      temp.push_back(vec[index]);
 
-    return *std::min_element(temp.begin(), temp.end());
-  }
-
-  double boxMax(std::vector<std::vector<double>> box, int index){
-    /*
-     * index shows which index of std::vector<double> have to be search to find the max
-     * if index=0 will return the max x_min
-     */
-    std::vector<double> temp;
-    for(auto const vec : box)
-      temp.push_back(vec[index]);
-
-    return *std::max_element(temp.begin(), temp.end());
-  }
-
-  void calculateRoi();
   //parameters
   void getParameters();
-  int num_overhead_cameras_;
-  std::vector<std::vector<float>> camera_poses_;
-  std::vector<std::string> overhead_topics_;
 
 };
 
