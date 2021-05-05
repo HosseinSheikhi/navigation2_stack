@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(nav2_gradient_costmap_plugin)
+project(nav2_ceiling_perception_plugin)
 
 set(lib_name ${PROJECT_NAME}_core)
 
@@ -43,8 +43,7 @@ set(dep_pkgs
 # === Build ===
 
 add_library(${lib_name} SHARED
-            src/overhead_camera.cpp
-            src/gradient_layer.cpp)
+        src/ceiling_layer.cpp)
 include_directories(include)
 
 # === Installation ===
@@ -56,12 +55,12 @@ install(DIRECTORY include/
         )
 # === Ament work ===
 
-# pluginlib_export_plugin_description_file() installs gradient_layer.xml
+# pluginlib_export_plugin_description_file() installs ceiling_layer.xml
 # file into "share" directory and sets ament indexes for it.
 # This allows the plugin to be discovered as a plugin of required type.
 ament_export_include_directories(include)
 ament_export_libraries(${library_name})
 ament_export_dependencies(${dependencies})
-pluginlib_export_plugin_description_file(nav2_costmap_2d gradient_layer.xml)
+pluginlib_export_plugin_description_file(nav2_costmap_2d ceiling_layer.xml)
 ament_target_dependencies(${lib_name} ${dep_pkgs})
 ament_package()

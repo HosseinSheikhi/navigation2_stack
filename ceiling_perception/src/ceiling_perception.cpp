@@ -46,11 +46,11 @@ ceiling_perception::CeilingPerception::CeilingPerception(rclcpp::NodeOptions opt
   sub_opt.callback_group = callback_group_subscriber_;
 
   /// define timer and bind it to its subscriber
-  map_timer_ = this->create_wall_timer(1s, std::bind(&CeilingPerception::map_timer_callback, this),callback_group_map_timer_);
+  map_timer_ = this->create_wall_timer(0.5s, std::bind(&CeilingPerception::map_timer_callback, this),callback_group_map_timer_);
 
   /// define subscribers to the segmented topics and assign each of them to a camera manager
   for(int cam_index=0; cam_index<num_overhead_cameras_;cam_index++){
-    overhead_cameras_.emplace_back(std::make_shared<OverheadCameraManager>("overhead_cam_ "+std::to_string(cam_index+1), camera_poses_[cam_index][0], camera_poses_[cam_index][1], camera_poses_[cam_index][2]));
+    overhead_cameras_.emplace_back(std::make_shared<OverheadCameraManager>("overhead_cam_"+std::to_string(cam_index+1), camera_poses_[cam_index][0], camera_poses_[cam_index][1], camera_poses_[cam_index][2]));
     camera_subs_.emplace_back(this->create_subscription<sensor_msgs::msg::Image>(overhead_topics_[cam_index], rclcpp::SystemDefaultsQoS(), std::bind(&OverheadCameraManager::OverheadCameraManager::image_cb, overhead_cameras_[cam_index], std::placeholders::_1),sub_opt));
   }
 
@@ -64,17 +64,14 @@ void ceiling_perception::CeilingPerception::map_timer_callback() {
 #endif
 
   auto inverse_sensor_prob = inverse_sensor_model(); // get inverse sensor probability
-  RCLCPP_INFO(this->get_logger(), "inverse sensor prob max: %f  min: %f", *std::max_element(inverse_sensor_prob.begin(), inverse_sensor_prob.end()), *std::min_element(inverse_sensor_prob.begin(), inverse_sensor_prob.end()) );
   auto inverse_sensor_log_odds = prob_to_logodds(inverse_sensor_prob); // get inverse sensor log odds
-  RCLCPP_INFO(this->get_logger(), "inverse sensor log odds max: %f  min: %f", *std::max_element(inverse_sensor_log_odds.begin(), inverse_sensor_log_odds.end()), *std::min_element(inverse_sensor_log_odds.begin(), inverse_sensor_log_odds.end()) );
 
   std::vector<float> posterior_map_log_odds(prior_map_log_odds_.size());
   for(unsigned int i=0;i< prior_map_log_odds_.size();i++)
     posterior_map_log_odds[i] = prior_map_log_odds_[i] + inverse_sensor_log_odds[i]; //sum inverse sensor log odds by prior map to get posterior log odds
 
   auto posterior_map_prob = logodds_to_prob(posterior_map_log_odds); // convert posterior log odds to probabilities
-  RCLCPP_INFO(this->get_logger(), "Posterior map at cell log odds 0 %f", posterior_map_log_odds[0]);
-  RCLCPP_INFO(this->get_logger(), "Posterior map at cell log odds 1 %f", posterior_map_log_odds[1]);
+
   std::vector<int8_t> map(posterior_map_prob.size());
   for(unsigned int i = 0; i< posterior_map_prob.size(); i++)
     map[i] = static_cast<int8_t>(round(posterior_map_prob[i]))*100;
@@ -138,8 +135,6 @@ std::vector<float> ceiling_perception::CeilingPerception::inverse_sensor_model()
       }
     }
 
-  RCLCPP_WARN(this->get_logger(),
-              "Ceiling Perception: calculate inverse sensor prob done");
   return inverse_sensor_prob;
 }
 

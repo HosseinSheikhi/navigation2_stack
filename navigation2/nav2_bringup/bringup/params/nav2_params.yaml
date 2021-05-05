@@ -206,7 +206,7 @@ global_costmap:
       robot_radius: 0.22
       resolution: 0.05
       track_unknown_space: true
-      plugins: ["static_layer"  ,   "obstacle_layer",  "inflation_layer" , "gradient_layer" ]
+      plugins: ["static_layer"  ,   "obstacle_layer",  "inflation_layer" , "ceiling_layer" ]
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
@@ -224,18 +224,9 @@ global_costmap:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
         inflation_radius: 0.55
-      gradient_layer:
-        plugin: "nav2_gradient_costmap_plugin::GradientLayer"
+      ceiling_layer:
+        plugin: "nav2_ceiling_perception_plugin::CeilingLayer"
         enabled: True
-        num_overhead_cameras: 10
-        overhead_topics: ["/autonomous_robot/image_segmentation/image_1", "/autonomous_robot/image_segmentation/image_2",
-                          "/autonomous_robot/image_segmentation/image_3", "/autonomous_robot/image_segmentation/image_4",
-                          "/autonomous_robot/image_segmentation/image_5", "/autonomous_robot/image_segmentation/image_6",
-                          "/autonomous_robot/image_segmentation/image_7", "/autonomous_robot/image_segmentation/image_8",
-                          "/autonomous_robot/image_segmentation/image_9", "/autonomous_robot/image_segmentation/image_10"]
-
-        camera_poses : "[[-1, -3.5, 5.5],[7.5, -3.5, 5.5], [13.5, -3.5, 5.5], [19.5, -3.5, 5.5], [25.5, -3.5, 5.5],
-                          [-1, 2.0, 5.5],[7.5, 2.0, 5.5],[13.5, 2.0, 5.5],[19.5, 2.0, 5.5],[25.5, 2.0, 5.5]]"
 
       always_send_full_costmap: True
   global_costmap_client:

@@ -1,0 +1,3 @@
+source;share/ceiling_perception/environment/ament_prefix_path.sh
+source;share/ceiling_perception/environment/library_path.sh
+source;share/ceiling_perception/environment/path.sh

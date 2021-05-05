@@ -84,11 +84,13 @@ void ceiling_perception::OverheadCameraManager::image_cb(sensor_msgs::msg::Image
   segmented_image_ = cv_image_ptr->image;
   cv::resize(segmented_image_, segmented_image_,
              cv::Size(image_width_, image_height_));
-//  #if DEBUG
-//    cv::imshow(name_, segmented_image_);
-//    cv::waitKey(1);
-//    std::cout<<"Frame "<<this->name_<<" received."<<std::endl;
-//  #endif
+  #if DEBUG
+  if (!name_.compare("overhead_cam_3")) {
+    cv::imshow(name_, segmented_image_);
+    cv::waitKey(1);
+    std::cout << "Frame " << this->name_ << " received." << std::endl;
+  }
+  #endif
   update_ = true; /// instance is update when image is being subscribed
 }
 

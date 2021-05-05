@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f841759d-de5f-4ffe-a2a3-e1e00b6476d7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ceiling_segmentation/UNET/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ceiling_segmentation/inference.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ceiling_segmentation/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/nav2_gradient_costmap_plugin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ceiling_perception/src/ceiling_perception.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ceiling_perception/src/ceiling_perception.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ceiling_perception/src/overhead_camera_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ceiling_perception/src/overhead_camera_manager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_bringup/bringup/params/nav2_params.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_bringup/bringup/params/nav2_params.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/CTestConfiguration.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/cmake-build-debug/CTestConfiguration.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/CTestCustom.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/cmake-build-debug/CTestCustom.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/nav2_gradient_costmap_pluginConfig-version.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/nav2_gradient_costmap_pluginConfig.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/package.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/cmake-build-debug/ament_cmake_core/package.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/stamps/ament_cmake_export_include_directories-extras.cmake.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/stamps/ament_prefix_path.sh.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/stamps/nameConfig-version.cmake.in.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/stamps/nameConfig.cmake.in.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/stamps/package.xml.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/stamps/package_xml_2_cmake.py.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/stamps/path.sh.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_core/stamps/templates_2_cmake.py.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_environment_hooks/ament_prefix_path.dsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_environment_hooks/local_setup.bash" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_environment_hooks/local_setup.dsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_environment_hooks/local_setup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_environment_hooks/local_setup.zsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_environment_hooks/package.dsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_environment_hooks/path.dsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/cmake-build-debug/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/nav2_costmap_2d__pluginlib__plugin/nav2_gradient_costmap_plugin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/nav2_gradient_costmap_plugin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/packages/nav2_gradient_costmap_plugin" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/DenseNet/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/nav2_gradient_costmap_plugin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_package_templates/templates.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/cmake-build-debug/ament_cmake_package_templates/templates.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/cmake-build-debug/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/cmake-build-debug/nav2_gradient_costmap_plugin.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/cmake-build-debug/nav2_gradient_costmap_plugin.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/gradient_layer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/ceiling_layer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/include/nav2_gradient_costmap_plugin/gradient_layer.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/include/nav2_ceiling_perception_plugin/ceiling_layer.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/include/nav2_gradient_costmap_plugin/overhead_camera.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/package.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/package.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/src/gradient_layer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation2/nav2_ceiling_perception_plugin/src/ceiling_layer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation2/nav2_gradient_costmap_plugin/src/overhead_camera.cpp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1s2M1lfKVqzyK8fhlr27THmG47j" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f841759d-de5f-4ffe-a2a3-e1e00b6476d7" name="Default Changelist" comment="" />
+      <created>1620066017930</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620066017930</updated>
+      <workItem from="1620066019963" duration="263000" />
+      <workItem from="1620067778321" duration="5301000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

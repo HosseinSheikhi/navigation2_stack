@@ -40,8 +40,8 @@
  * Reference tutorial:
  * https://navigation.ros.org/tutorials/docs/writing_new_costmap2d_plugin.html
  *********************************************************************/
-#ifndef GRADIENT_LAYER_HPP_
-#define GRADIENT_LAYER_HPP_
+#ifndef CEILING_LAYER_HPP_
+#define CEILING_LAYER_HPP_
 
 #include "rclcpp/rclcpp.hpp"
 #include "nav2_costmap_2d/layer.hpp"
@@ -58,13 +58,13 @@
 #include "memory.h"
 #include <algorithm>
 
-namespace nav2_gradient_costmap_plugin
+namespace nav2_ceiling_perception_plugin
 {
 
-class GradientLayer : public nav2_costmap_2d::CostmapLayer
+class CeilingLayer : public nav2_costmap_2d::CostmapLayer
 {
 public:
-  GradientLayer();
+  CeilingLayer();
 
   virtual void onInitialize();
   virtual void updateBounds(
@@ -85,34 +85,29 @@ public:
   virtual bool isClearable() {return false;}
 
 private:
-  bool update_{ false};
-  double roi_min_x_{0}, roi_min_y_{0}, roi_max_x_{0}, roi_max_y_{0};
-  unsigned int ceiling_size_x_, ceiling_size_y_; /// desired size of x and y in meter based on ceiling cameras coverage, must divid by resolution, I think I should not change the resolution in this plugin
-  unsigned int map_min_x, map_min_y;
-  unsigned int map_max_x, map_max_y;
 
-  double ceiling_origin_x_;
-  double ceiling_origin_y_;
-  unsigned int last_size_x_;
-  unsigned int last_size_y_;
-  double ceiling_resolution_;
+  double roi_min_x_{0}, roi_min_y_{0}, roi_max_x_{0}, roi_max_y_{0}; ///< ceiling_perception map ROI
+  unsigned int ceiling_size_x_, ceiling_size_y_; ///< desired size of x and y in meter based on ceiling_perception map coverage
+  double ceiling_origin_x_, ceiling_origin_y_; ///< (x,y) origin of ceiling_perception map
+  double ceiling_resolution_; ///< resolution of ceiling_perception map, must be as same as SLAM's map in current implementation
 
-  rclcpp::Subscription<nav_msgs::msg::OccupancyGrid>::SharedPtr ceiling_map_sub_;
-  void ceiling_map_callback(nav_msgs::msg::OccupancyGrid::SharedPtr map);
-  std::vector<signed char> ceiling_map_;
+  rclcpp::Subscription<nav_msgs::msg::OccupancyGrid>::SharedPtr ceiling_map_sub_; ///< subscribe to ceiling perception map
+  void ceiling_map_callback(nav_msgs::msg::OccupancyGrid::SharedPtr map);///< callback for ceiling_perception map
+  std::vector<signed char> ceiling_map_; ///< keeps a copy of ceiling_perception map
 
-  rclcpp::Service<custom_roi_srv::srv::ROI>::SharedPtr ceiling_ROI_srv_;
+
+  rclcpp::Service<custom_roi_srv::srv::ROI>::SharedPtr ceiling_ROI_srv_; ///< gives service to static_layer to share the desired changes (costmap's size, origin, etc.)
   void handle_ceiling_roi_service(std::shared_ptr<custom_roi_srv::srv::ROI::Request> request,
                                   std::shared_ptr<custom_roi_srv::srv::ROI::Response> response);
 
 
-  unsigned int counter = 0;
+  unsigned int counter = 0; ///< a temporary variable
 
   //parameters
-  void getParameters();
+  void getParameters(); ///< defines and reads parameters
 
 };
 
 }  // namespace nav2_ceiling_perception_plugin
 
-#endif  // GRADIENT_LAYER_HPP_
+#endif  // CEILING_LAYER_HPP_
