@@ -20,8 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'train = ceiling_segmentation.train:main',
-            'inference = ceiling_segmentation.inference:main'
+            'ceiling_segmentation_start = ceiling_segmentation.main:main',
         ],
     },
 )

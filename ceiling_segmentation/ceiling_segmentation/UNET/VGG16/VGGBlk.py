@@ -17,12 +17,14 @@ This Layer subclass is used to create basic VGG blocks as is defined in readme f
 import tensorflow as tf
 from tensorflow.keras import layers
 
-
-class VggBlock(tf.keras.layers.Layer):
+#TODO we do not need to build function cauase weights are not based on input size
+class VggBlock(layers.Layer):
     def __init__(self, layers_num, filters, kernel_size, name, stride=1):
         """
+        Defines custom layer attributes, and creates layer state variables that
+        do not depend on input shapes, using add_weight()
         :param layers_num: number of convolution layers in block
-        :param filters: filters for con layer
+        :param filters: filters for conv layer
         :param kernel_size: kernel_size for conv layer
         :param name: name of the VGG block
         :param stride: stride for conv layers
@@ -37,7 +39,8 @@ class VggBlock(tf.keras.layers.Layer):
 
     def build(self, input_shape):
         """
-        Creates the convolution layers
+        This method can be used to create weights that depend on the shape(s) of the input(s), using add_weight().
+        __call__() will automatically build the layer (if it has not been built yet) by calling build()
         :param input_shape: is fed automatically
         :return: None
         """
@@ -48,10 +51,11 @@ class VggBlock(tf.keras.layers.Layer):
 
     def call(self, inputs, training=None):
         """
-        passes the input to the conv layers
+        performs the logic of applying the layer to the input tensors (which should be passed in as argument).
+        passes the input tensors to the conv layers
         :param inputs: are fed in either encoder or decoder
         :param training: if its in training mode true otherwise false
-        :return: output of vgg block
+        :return: output of vgg layer
         """
         x = inputs
         for conv in self.conv_layers:
