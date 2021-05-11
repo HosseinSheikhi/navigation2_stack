@@ -221,6 +221,7 @@ private:
   // ROS2 Parameters
   void get_parameters(); ///< reads parameters from launch file
   bool enabled_; ///< whether if this node is enabled
+  bool publish_tf_ = false; ///< whether if static tf must be published
   int num_overhead_cameras_; ///< Number of overhead cameras will be fed to this class to get a map
   std::vector<std::vector<float>> camera_poses_; ///< a vector of (x,y,z) coordinates of all cameras
   std::vector<std::string> overhead_topics_; ///< a vector of topic names that segmented images are published on

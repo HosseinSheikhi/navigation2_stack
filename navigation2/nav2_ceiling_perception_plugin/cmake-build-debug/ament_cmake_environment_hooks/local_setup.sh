@@ -100,8 +100,8 @@ if [ -z "$AMENT_RETURN_ENVIRONMENT_HOOKS" ]; then
 fi
 
 # list all environment hooks of this package
-ament_append_value AMENT_ENVIRONMENT_HOOKS "$AMENT_CURRENT_PREFIX/share/nav2_gradient_costmap_plugin/environment/ament_prefix_path.sh"
-ament_append_value AMENT_ENVIRONMENT_HOOKS "$AMENT_CURRENT_PREFIX/share/nav2_gradient_costmap_plugin/environment/path.sh"
+ament_append_value AMENT_ENVIRONMENT_HOOKS "$AMENT_CURRENT_PREFIX/share/nav2_ceiling_perception_plugin/environment/ament_prefix_path.sh"
+ament_append_value AMENT_ENVIRONMENT_HOOKS "$AMENT_CURRENT_PREFIX/share/nav2_ceiling_perception_plugin/environment/path.sh"
 
 # source all shell-specific environment hooks of this package
 # if not returning them

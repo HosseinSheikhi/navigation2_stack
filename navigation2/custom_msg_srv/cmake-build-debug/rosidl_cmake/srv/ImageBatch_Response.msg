@@ -1,2 +1,0 @@
-
-sensor_msgs/Image[2] data

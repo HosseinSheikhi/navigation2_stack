@@ -45,16 +45,28 @@ ceiling_perception::CeilingPerception::CeilingPerception(rclcpp::NodeOptions opt
   auto sub_opt = rclcpp::SubscriptionOptions();
   sub_opt.callback_group = callback_group_subscriber_;
 
-  /// define timer and bind it to its subscriber
-  map_timer_ = this->create_wall_timer(0.5s, std::bind(&CeilingPerception::map_timer_callback, this),callback_group_map_timer_);
 
-  /// define subscribers to the segmented topics and assign each of them to a camera manager
-  for(int cam_index=0; cam_index<num_overhead_cameras_;cam_index++){
-    overhead_cameras_.emplace_back(std::make_shared<OverheadCameraManager>("overhead_cam_"+std::to_string(cam_index+1), camera_poses_[cam_index][0], camera_poses_[cam_index][1], camera_poses_[cam_index][2]));
-    camera_subs_.emplace_back(this->create_subscription<sensor_msgs::msg::Image>(overhead_topics_[cam_index], rclcpp::SystemDefaultsQoS(), std::bind(&OverheadCameraManager::OverheadCameraManager::image_cb, overhead_cameras_[cam_index], std::placeholders::_1),sub_opt));
-  }
+    /// define timer and bind it to its subscriber
+    map_timer_ = this->create_wall_timer(
+        0.5s, std::bind(&CeilingPerception::map_timer_callback, this),
+        callback_group_map_timer_);
 
-  calculate_roi();
+    /// define subscribers to the segmented topics and assign each of them to a camera manager
+    for (int cam_index = 0; cam_index < num_overhead_cameras_; cam_index++) {
+      overhead_cameras_.emplace_back(std::make_shared<OverheadCameraManager>(
+          "overhead_cam_" + std::to_string(cam_index + 1),
+          camera_poses_[cam_index][0], camera_poses_[cam_index][1],
+          camera_poses_[cam_index][2]));
+      camera_subs_.emplace_back(
+          this->create_subscription<sensor_msgs::msg::Image>(
+              overhead_topics_[cam_index], rclcpp::SystemDefaultsQoS(),
+              std::bind(&OverheadCameraManager::OverheadCameraManager::image_cb,
+                        overhead_cameras_[cam_index], std::placeholders::_1),
+              sub_opt));
+    }
+
+    calculate_roi();
+
 }
 
 void ceiling_perception::CeilingPerception::map_timer_callback() {
@@ -94,7 +106,8 @@ void ceiling_perception::CeilingPerception::map_timer_callback() {
 
   update_prior(posterior_map_log_odds);
 
-  publish_static_tf();
+  if(publish_tf_)
+    publish_static_tf();
 
 #if DEBUG
   RCLCPP_INFO(this->get_logger(), "Ceiling Perception: map published");
@@ -202,6 +215,7 @@ void ceiling_perception::CeilingPerception::calculate_roi(){
 void ceiling_perception::CeilingPerception::get_parameters() {
 
   this->get_parameter("enabled", enabled_);
+  this->get_parameter("publish_tf", publish_tf_);
   this->get_parameter("log_odds_saturation", log_odds_saturation_);
   this->get_parameter("num_overhead_cameras", num_overhead_cameras_);
   this->get_parameter("resolution", resolution_);

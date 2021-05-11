@@ -1,6 +1,0 @@
-{
-  "package_name": "custom_msg_srv",
-  "non_idl_tuples": [
-    "/home/hossein/dev_ws/src/custom_msg_srv:srv/ImageBatch.srv"
-  ]
-}

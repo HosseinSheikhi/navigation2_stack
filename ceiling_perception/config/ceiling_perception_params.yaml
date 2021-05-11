@@ -2,6 +2,7 @@ ceiling_perception: #name space (same as launch file)
   ceiling_perception: # package name
     ros__parameters:
       enabled: true
+      publish_tf: false
       log_odds_saturation: 10.0
       num_overhead_cameras: 10
       resolution: 0.05 #must be as same as SLAM resolution

@@ -3,7 +3,6 @@
 
 #include "nav2_costmap_2d/costmap_math.hpp"
 #include "nav2_costmap_2d/footprint.hpp"
-#include "nav2_costmap_2d/array_parser.hpp"
 #include "rclcpp/parameter_events_filter.hpp"
 #include "string"
 #include <chrono>
@@ -106,12 +105,15 @@ void CeilingLayer::updateCosts(
   int max_i,
   int max_j)
 {
+
   RCLCPP_INFO(node_->get_logger(), "CeilingLayer: Update cost called");
-  unsigned int map_min_x, map_min_y;
-  unsigned int map_max_x, map_max_y;
+  if(ceiling_map_.empty()) //means no map received
+    return;
+  unsigned int map_min_x{0}, map_min_y{0};
+  unsigned int map_max_x{0}, map_max_y{0};
   // check if the layered_costmap is resized by static layer to cover ceiling layer
   if(!(worldToMap(roi_min_x_, roi_min_y_,map_min_x, map_min_y) && worldToMap(roi_max_x_, roi_max_y_,map_max_x,map_max_y))){
-    RCLCPP_WARN(node_->get_logger(), "costmap layered is not resized yet");
+    RCLCPP_WARN(node_->get_logger(), "CeilingLayer: costmap layered is not resized yet");
     return;
   }
 
@@ -122,24 +124,22 @@ void CeilingLayer::updateCosts(
         costmap_[getIndex(j , i )] = NO_INFORMATION;
     counter++;
   }
-
-  unsigned int biased_x, biased_y;
-  worldToMap(ceiling_origin_x_, ceiling_origin_y_, biased_x, biased_y);
-  unsigned int biased_index = master_grid.getIndex(biased_x, biased_y);
+  unsigned char * master_costmap_ = master_grid.getCharMap();
   unsigned int index =0;
-  if(!ceiling_map_.empty()) { //means no map received
-    RCLCPP_INFO(node_->get_logger(), "CeilingLayer: update with new one");
-    for (unsigned int i = 0; i < ceiling_size_y_; ++i)
-      for (unsigned int j = 0; j < ceiling_size_x_; ++j) { // its crucial to iterate in a row major
-        if (static_cast<int8_t>(ceiling_map_[index]) == 0)
-          costmap_[getIndex(j+map_min_x, i+map_min_y)] = FREE_SPACE;
-        else if (static_cast<int8_t>(ceiling_map_[index]) == 100)
-          costmap_[getIndex(j+map_min_x, i+map_min_y)] = LETHAL_OBSTACLE;
-        index++;
-      }
-  }
 
-  updateWithOverwrite(master_grid, static_cast<int>(map_min_x), static_cast<int>(map_min_y), static_cast<int>(map_max_x), static_cast<int>(map_max_y));
+  RCLCPP_INFO(node_->get_logger(), "CeilingLayer: update with new one");
+  for (unsigned int i = 0; i < ceiling_size_y_; ++i)
+    for (unsigned int j = 0; j < ceiling_size_x_; ++j) { // its crucial to iterate in a row major
+      costmap_[getIndex(j+map_min_x, i+map_min_y)] = NO_INFORMATION;
+      if (static_cast<int8_t>(ceiling_map_[index]) == 0 && master_costmap_[getIndex(j+map_min_x, i+map_min_y)]==NO_INFORMATION)
+        costmap_[getIndex(j+map_min_x, i+map_min_y)] = FREE_SPACE;
+      else if (static_cast<int8_t>(ceiling_map_[index]) == 100 && master_costmap_[getIndex(j+map_min_x, i+map_min_y)]==NO_INFORMATION)
+        costmap_[getIndex(j+map_min_x, i+map_min_y)] = LETHAL_OBSTACLE;
+      index++;
+    }
+
+
+  updateWithMax(master_grid, static_cast<int>(map_min_x), static_cast<int>(map_min_y), static_cast<int>(map_max_x), static_cast<int>(map_max_y));
 
   RCLCPP_INFO(node_->get_logger(), "CeilingLayer: Update cost end");
 }
