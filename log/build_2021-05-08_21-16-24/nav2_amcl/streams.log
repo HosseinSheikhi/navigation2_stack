@@ -1,0 +1,54 @@
+[0.067s] Invoking command in '/home/hossein/navigation2_stack/build/nav2_amcl': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/hossein/navigation2_stack/build/nav2_amcl -- -j8 -l8
+[0.307s] [ 23%] Built target map_lib
+[0.328s] [ 50%] Built target pf_lib
+[0.422s] [ 69%] Built target sensors_lib
+[0.490s] [ 84%] Built target motions_lib
+[0.727s] [ 92%] Built target amcl_core
+[0.843s] [100%] Built target amcl
+[0.914s] Invoked command in '/home/hossein/navigation2_stack/build/nav2_amcl' returned '0': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/hossein/navigation2_stack/build/nav2_amcl -- -j8 -l8
+[1.054s] Invoking command in '/home/hossein/navigation2_stack/build/nav2_amcl': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/hossein/navigation2_stack/build/nav2_amcl
+[1.086s] -- Install configuration: "Release"
+[1.097s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/lib/libamcl_core.so
+[1.098s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/lib/nav2_amcl/amcl
+[1.098s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include/
+[1.098s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl
+[1.098s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/pf
+[1.098s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/pf/pf_pdf.hpp
+[1.098s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/pf/pf.hpp
+[1.098s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/pf/eig3.hpp
+[1.098s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/pf/pf_kdtree.hpp
+[1.099s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/pf/pf_vector.hpp
+[1.099s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/motion_model
+[1.099s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/motion_model/motion_model.hpp
+[1.099s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/map
+[1.099s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/map/map.hpp
+[1.099s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/sensors
+[1.099s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/sensors/laser
+[1.099s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/sensors/laser/laser.hpp
+[1.100s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/angleutils.hpp
+[1.100s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/include//nav2_amcl/amcl_node.hpp
+[1.100s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/environment/library_path.sh
+[1.100s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/environment/library_path.dsv
+[1.100s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/ament_index/resource_index/package_run_dependencies/nav2_amcl
+[1.100s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/ament_index/resource_index/parent_prefix_path/nav2_amcl
+[1.100s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/environment/ament_prefix_path.sh
+[1.100s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/environment/ament_prefix_path.dsv
+[1.101s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/environment/path.sh
+[1.101s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/environment/path.dsv
+[1.101s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/local_setup.bash
+[1.101s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/local_setup.sh
+[1.101s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/local_setup.zsh
+[1.101s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/local_setup.dsv
+[1.103s] -- Installing: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/package.dsv
+[1.103s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/ament_index/resource_index/packages/nav2_amcl
+[1.103s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.103s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/cmake/ament_cmake_export_libraries-extras.cmake
+[1.103s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.103s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/cmake/nav2_amclConfig.cmake
+[1.104s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/cmake/nav2_amclConfig-version.cmake
+[1.104s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/share/nav2_amcl/package.xml
+[1.104s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/lib/libpf_lib.so
+[1.104s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/lib/libmap_lib.so
+[1.104s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/lib/libmotions_lib.so
+[1.104s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_amcl/lib/libsensors_lib.so
+[1.175s] Invoked command in '/home/hossein/navigation2_stack/build/nav2_amcl' returned '0': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/hossein/navigation2_stack/build/nav2_amcl

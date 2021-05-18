@@ -1,0 +1,165 @@
+[0.054s] Invoking command in '/home/hossein/navigation2_stack/build/nav2_map_server': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/nav2_ws/install/nav2_system_tests:/home/hossein/nav2_ws/install/nav2_bringup:/home/hossein/nav2_ws/install/navigation2:/home/hossein/nav2_ws/install/smac_planner:/home/hossein/nav2_ws/install/nav2_dwb_controller:/home/hossein/nav2_ws/install/nav2_controller:/home/hossein/nav2_ws/install/dwb_plugins:/home/hossein/nav2_ws/install/dwb_critics:/home/hossein/nav2_ws/install/dwb_core:/home/hossein/nav2_ws/install/nav_2d_utils:/home/hossein/nav2_ws/install/dwb_msgs:/home/hossein/nav2_ws/install/nav_2d_msgs:/home/hossein/nav2_ws/install/nav2_waypoint_follower:/home/hossein/nav2_ws/install/nav2_recoveries:/home/hossein/nav2_ws/install/nav2_planner:/home/hossein/nav2_ws/install/nav2_navfn_planner:/home/hossein/nav2_ws/install/nav2_gradient_costmap_plugin:/home/hossein/nav2_ws/install/nav2_core:/home/hossein/nav2_ws/install/costmap_queue:/home/hossein/nav2_ws/install/nav2_costmap_2d:/home/hossein/nav2_ws/install/nav2_voxel_grid:/home/hossein/nav2_ws/install/nav2_rviz_plugins:/home/hossein/nav2_ws/install/nav2_map_server:/home/hossein/nav2_ws/install/nav2_lifecycle_manager:/home/hossein/nav2_ws/install/nav2_bt_navigator:/home/hossein/nav2_ws/install/nav2_behavior_tree:/home/hossein/nav2_ws/install/nav2_amcl:/home/hossein/nav2_ws/install/nav2_util:/home/hossein/nav2_ws/install/nav2_msgs:/home/hossein/nav2_ws/install/nav2_common:/home/hossein/nav2_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake /home/hossein/navigation2_stack/navigation2/nav2_map_server -DCMAKE_INSTALL_PREFIX=/home/hossein/navigation2_stack/install/nav2_map_server
+[0.144s] -- The C compiler identification is GNU 7.5.0
+[0.249s] -- The CXX compiler identification is GNU 7.5.0
+[0.260s] -- Check for working C compiler: /usr/bin/cc
+[0.385s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.386s] -- Detecting C compiler ABI info
+[0.509s] -- Detecting C compiler ABI info - done
+[0.535s] -- Detecting C compile features
+[0.535s] -- Detecting C compile features - done
+[0.540s] -- Check for working CXX compiler: /usr/bin/c++
+[0.681s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.683s] -- Detecting CXX compiler ABI info
+[0.830s] -- Detecting CXX compiler ABI info - done
+[0.857s] -- Detecting CXX compile features
+[0.857s] -- Detecting CXX compile features - done
+[0.861s] -- Found ament_cmake: 0.9.8 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.903s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.5", minimum required is "3") 
+[0.903s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.395s] -- Found nav2_common: 0.4.5 (/home/hossein/navigation2_stack/install/nav2_common/share/nav2_common/cmake)
+[1.400s] -- Found rclcpp: 2.3.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[1.515s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.533s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.685s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[1.741s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.911s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.044s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[2.052s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.054s] -- Looking for pthread.h
+[2.162s] -- Looking for pthread.h - found
+[2.162s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.269s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[2.270s] -- Looking for pthread_create in pthreads
+[2.369s] -- Looking for pthread_create in pthreads - not found
+[2.369s] -- Looking for pthread_create in pthread
+[2.497s] -- Looking for pthread_create in pthread - found
+[2.499s] -- Found Threads: TRUE  
+[2.803s] -- Found rclcpp_lifecycle: 2.3.1 (/opt/ros/foxy/share/rclcpp_lifecycle/cmake)
+[2.871s] -- Found nav_msgs: 2.0.4 (/opt/ros/foxy/share/nav_msgs/cmake)
+[3.123s] -- Found nav2_msgs: 0.4.5 (/home/hossein/navigation2_stack/install/nav2_msgs/share/nav2_msgs/cmake)
+[3.754s] -- Found yaml_cpp_vendor: 7.0.2 (/opt/ros/foxy/share/yaml_cpp_vendor/cmake)
+[3.754s] -- Setting yaml-cpp_DIR to: '/opt/ros/foxy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/lib/cmake/yaml-cpp'
+[3.761s] -- Found tf2: 0.13.10 (/opt/ros/foxy/share/tf2/cmake)
+[3.784s] -- Found nav2_util: 0.4.5 (/home/hossein/navigation2_stack/install/nav2_util/share/nav2_util/cmake)
+[4.504s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/foxy/share/eigen3_cmake_module/cmake)
+[4.511s] -- Found Eigen3: TRUE (found version "3.3.7") 
+[4.717s] -- Found GRAPHICSMAGICKCPP: /usr/include/GraphicsMagick  
+[4.717s] -- Setting build type to Release as none was specified.
+[6.414s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[6.847s] -- Found gtest sources under '/opt/ros/foxy/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[6.861s] -- Check if compiler accepts -pthread
+[7.228s] -- Check if compiler accepts -pthread - yes
+[7.241s] -- Found gtest sources under '/opt/ros/foxy/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[7.278s] -- Found gtest sources under '/opt/ros/foxy/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[7.332s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[7.334s] -- Configured cppcheck include dirs: /home/hossein/navigation2_stack/navigation2/nav2_map_server/include
+[7.334s] -- Configured cppcheck exclude dirs and/or files: 
+[7.352s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[7.352s] -- Configured cpplint exclude dirs and/or files: 
+[7.354s] -- Added test 'flake8' to check Python code syntax and style conventions
+[7.357s] -- Added test 'lint_cmake' to check CMake code style
+[7.360s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[7.382s] -- Added test 'uncrustify' to check C / C++ code style
+[7.382s] -- Configured uncrustify additional arguments: 
+[7.384s] -- Added test 'xmllint' to check XML markup files
+[7.407s] -- Configuring done
+[8.135s] -- Generating done
+[8.142s] -- Build files have been written to: /home/hossein/navigation2_stack/build/nav2_map_server
+[8.176s] Invoked command in '/home/hossein/navigation2_stack/build/nav2_map_server' returned '0': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/nav2_ws/install/nav2_system_tests:/home/hossein/nav2_ws/install/nav2_bringup:/home/hossein/nav2_ws/install/navigation2:/home/hossein/nav2_ws/install/smac_planner:/home/hossein/nav2_ws/install/nav2_dwb_controller:/home/hossein/nav2_ws/install/nav2_controller:/home/hossein/nav2_ws/install/dwb_plugins:/home/hossein/nav2_ws/install/dwb_critics:/home/hossein/nav2_ws/install/dwb_core:/home/hossein/nav2_ws/install/nav_2d_utils:/home/hossein/nav2_ws/install/dwb_msgs:/home/hossein/nav2_ws/install/nav_2d_msgs:/home/hossein/nav2_ws/install/nav2_waypoint_follower:/home/hossein/nav2_ws/install/nav2_recoveries:/home/hossein/nav2_ws/install/nav2_planner:/home/hossein/nav2_ws/install/nav2_navfn_planner:/home/hossein/nav2_ws/install/nav2_gradient_costmap_plugin:/home/hossein/nav2_ws/install/nav2_core:/home/hossein/nav2_ws/install/costmap_queue:/home/hossein/nav2_ws/install/nav2_costmap_2d:/home/hossein/nav2_ws/install/nav2_voxel_grid:/home/hossein/nav2_ws/install/nav2_rviz_plugins:/home/hossein/nav2_ws/install/nav2_map_server:/home/hossein/nav2_ws/install/nav2_lifecycle_manager:/home/hossein/nav2_ws/install/nav2_bt_navigator:/home/hossein/nav2_ws/install/nav2_behavior_tree:/home/hossein/nav2_ws/install/nav2_amcl:/home/hossein/nav2_ws/install/nav2_util:/home/hossein/nav2_ws/install/nav2_msgs:/home/hossein/nav2_ws/install/nav2_common:/home/hossein/nav2_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake /home/hossein/navigation2_stack/navigation2/nav2_map_server -DCMAKE_INSTALL_PREFIX=/home/hossein/navigation2_stack/install/nav2_map_server
+[8.178s] Invoking command in '/home/hossein/navigation2_stack/build/nav2_map_server': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/nav2_ws/install/nav2_system_tests:/home/hossein/nav2_ws/install/nav2_bringup:/home/hossein/nav2_ws/install/navigation2:/home/hossein/nav2_ws/install/smac_planner:/home/hossein/nav2_ws/install/nav2_dwb_controller:/home/hossein/nav2_ws/install/nav2_controller:/home/hossein/nav2_ws/install/dwb_plugins:/home/hossein/nav2_ws/install/dwb_critics:/home/hossein/nav2_ws/install/dwb_core:/home/hossein/nav2_ws/install/nav_2d_utils:/home/hossein/nav2_ws/install/dwb_msgs:/home/hossein/nav2_ws/install/nav_2d_msgs:/home/hossein/nav2_ws/install/nav2_waypoint_follower:/home/hossein/nav2_ws/install/nav2_recoveries:/home/hossein/nav2_ws/install/nav2_planner:/home/hossein/nav2_ws/install/nav2_navfn_planner:/home/hossein/nav2_ws/install/nav2_gradient_costmap_plugin:/home/hossein/nav2_ws/install/nav2_core:/home/hossein/nav2_ws/install/costmap_queue:/home/hossein/nav2_ws/install/nav2_costmap_2d:/home/hossein/nav2_ws/install/nav2_voxel_grid:/home/hossein/nav2_ws/install/nav2_rviz_plugins:/home/hossein/nav2_ws/install/nav2_map_server:/home/hossein/nav2_ws/install/nav2_lifecycle_manager:/home/hossein/nav2_ws/install/nav2_bt_navigator:/home/hossein/nav2_ws/install/nav2_behavior_tree:/home/hossein/nav2_ws/install/nav2_amcl:/home/hossein/nav2_ws/install/nav2_util:/home/hossein/nav2_ws/install/nav2_msgs:/home/hossein/nav2_ws/install/nav2_common:/home/hossein/nav2_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/hossein/navigation2_stack/build/nav2_map_server -- -j8 -l8
+[8.292s] [35m[1mScanning dependencies of target gtest[0m
+[8.327s] [35m[1mScanning dependencies of target gtest_main[0m
+[8.340s] [35m[1mScanning dependencies of target map_io[0m
+[8.373s] [  3%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[8.440s] [  6%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[8.703s] [  9%] [32mBuilding CXX object CMakeFiles/map_io.dir/src/map_mode.cpp.o[0m
+[8.704s] [ 12%] [32mBuilding CXX object CMakeFiles/map_io.dir/src/map_io.cpp.o[0m
+[10.860s] [ 16%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[11.137s] [ 16%] Built target gtest_main
+[18.513s] [ 19%] [32m[1mLinking CXX shared library libmap_io.so[0m
+[19.065s] [ 19%] Built target map_io
+[19.096s] [35m[1mScanning dependencies of target test_map_saver_publisher[0m
+[19.106s] [35m[1mScanning dependencies of target map_server_core[0m
+[19.177s] [ 22%] [32mBuilding CXX object test/component/CMakeFiles/test_map_saver_publisher.dir/test_map_saver_publisher.cpp.o[0m
+[19.194s] [ 25%] [32mBuilding CXX object test/component/CMakeFiles/test_map_saver_publisher.dir/__/test_constants.cpp.o[0m
+[19.290s] [ 29%] [32mBuilding CXX object CMakeFiles/map_server_core.dir/src/map_saver/map_saver.cpp.o[0m
+[19.299s] [ 32%] [32mBuilding CXX object CMakeFiles/map_server_core.dir/src/map_server/map_server.cpp.o[0m
+[22.205s] [ 35%] [32m[1mLinking CXX static library libgtest.a[0m
+[22.276s] [ 35%] Built target gtest
+[22.303s] [35m[1mScanning dependencies of target test_map_io[0m
+[22.324s] [35m[1mScanning dependencies of target test_map_saver_cli[0m
+[22.448s] [ 38%] [32mBuilding CXX object test/map_saver_cli/CMakeFiles/test_map_saver_cli.dir/test_map_saver_cli.cpp.o[0m
+[22.483s] [ 41%] [32mBuilding CXX object test/map_saver_cli/CMakeFiles/test_map_saver_cli.dir/__/test_constants.cpp.o[0m
+[22.543s] [ 45%] [32mBuilding CXX object test/unit/CMakeFiles/test_map_io.dir/test_map_io.cpp.o[0m
+[22.564s] [ 48%] [32mBuilding CXX object test/unit/CMakeFiles/test_map_io.dir/__/test_constants.cpp.o[0m
+[27.908s] [ 51%] [32m[1mLinking CXX executable test_map_saver_publisher[0m
+[28.557s] [ 51%] Built target test_map_saver_publisher
+[30.871s] [ 54%] [32m[1mLinking CXX executable test_map_io[0m
+[31.231s] [ 58%] [32m[1mLinking CXX executable test_map_saver_cli[0m
+[31.267s] [ 58%] Built target test_map_io
+[31.461s] [ 58%] Built target test_map_saver_cli
+[33.475s] [ 61%] [32m[1mLinking CXX shared library libmap_server_core.so[0m
+[34.313s] [ 61%] Built target map_server_core
+[34.346s] [35m[1mScanning dependencies of target map_saver_cli[0m
+[34.384s] [35m[1mScanning dependencies of target map_server[0m
+[34.392s] [35m[1mScanning dependencies of target map_saver_server[0m
+[34.421s] [35m[1mScanning dependencies of target test_map_saver_node[0m
+[34.433s] [35m[1mScanning dependencies of target test_map_server_node[0m
+[34.564s] [ 64%] [32mBuilding CXX object CMakeFiles/map_saver_cli.dir/src/map_saver/main_cli.cpp.o[0m
+[34.586s] [ 67%] [32mBuilding CXX object CMakeFiles/map_server.dir/src/map_server/main.cpp.o[0m
+[34.607s] [ 70%] [32mBuilding CXX object CMakeFiles/map_saver_server.dir/src/map_saver/main_server.cpp.o[0m
+[34.624s] [ 74%] [32mBuilding CXX object test/component/CMakeFiles/test_map_saver_node.dir/test_map_saver_node.cpp.o[0m
+[34.648s] [ 77%] [32mBuilding CXX object test/component/CMakeFiles/test_map_server_node.dir/test_map_server_node.cpp.o[0m
+[34.649s] [ 80%] [32mBuilding CXX object test/component/CMakeFiles/test_map_server_node.dir/__/test_constants.cpp.o[0m
+[34.700s] [ 83%] [32mBuilding CXX object test/component/CMakeFiles/test_map_saver_node.dir/__/test_constants.cpp.o[0m
+[42.042s] [ 87%] [32m[1mLinking CXX executable map_saver_cli[0m
+[42.798s] [ 90%] [32m[1mLinking CXX executable map_saver_server[0m
+[42.803s] [ 93%] [32m[1mLinking CXX executable map_server[0m
+[43.568s] [ 93%] Built target map_saver_cli
+[43.939s] [ 93%] Built target map_server
+[44.232s] [ 93%] Built target map_saver_server
+[48.204s] [ 96%] [32m[1mLinking CXX executable test_map_saver_node[0m
+[49.152s] [ 96%] Built target test_map_saver_node
+[49.787s] [100%] [32m[1mLinking CXX executable test_map_server_node[0m
+[50.160s] [100%] Built target test_map_server_node
+[50.177s] Invoked command in '/home/hossein/navigation2_stack/build/nav2_map_server' returned '0': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/nav2_ws/install/nav2_system_tests:/home/hossein/nav2_ws/install/nav2_bringup:/home/hossein/nav2_ws/install/navigation2:/home/hossein/nav2_ws/install/smac_planner:/home/hossein/nav2_ws/install/nav2_dwb_controller:/home/hossein/nav2_ws/install/nav2_controller:/home/hossein/nav2_ws/install/dwb_plugins:/home/hossein/nav2_ws/install/dwb_critics:/home/hossein/nav2_ws/install/dwb_core:/home/hossein/nav2_ws/install/nav_2d_utils:/home/hossein/nav2_ws/install/dwb_msgs:/home/hossein/nav2_ws/install/nav_2d_msgs:/home/hossein/nav2_ws/install/nav2_waypoint_follower:/home/hossein/nav2_ws/install/nav2_recoveries:/home/hossein/nav2_ws/install/nav2_planner:/home/hossein/nav2_ws/install/nav2_navfn_planner:/home/hossein/nav2_ws/install/nav2_gradient_costmap_plugin:/home/hossein/nav2_ws/install/nav2_core:/home/hossein/nav2_ws/install/costmap_queue:/home/hossein/nav2_ws/install/nav2_costmap_2d:/home/hossein/nav2_ws/install/nav2_voxel_grid:/home/hossein/nav2_ws/install/nav2_rviz_plugins:/home/hossein/nav2_ws/install/nav2_map_server:/home/hossein/nav2_ws/install/nav2_lifecycle_manager:/home/hossein/nav2_ws/install/nav2_bt_navigator:/home/hossein/nav2_ws/install/nav2_behavior_tree:/home/hossein/nav2_ws/install/nav2_amcl:/home/hossein/nav2_ws/install/nav2_util:/home/hossein/nav2_ws/install/nav2_msgs:/home/hossein/nav2_ws/install/nav2_common:/home/hossein/nav2_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/hossein/navigation2_stack/build/nav2_map_server -- -j8 -l8
+[50.261s] Invoking command in '/home/hossein/navigation2_stack/build/nav2_map_server': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/nav2_ws/install/nav2_system_tests:/home/hossein/nav2_ws/install/nav2_bringup:/home/hossein/nav2_ws/install/navigation2:/home/hossein/nav2_ws/install/smac_planner:/home/hossein/nav2_ws/install/nav2_dwb_controller:/home/hossein/nav2_ws/install/nav2_controller:/home/hossein/nav2_ws/install/dwb_plugins:/home/hossein/nav2_ws/install/dwb_critics:/home/hossein/nav2_ws/install/dwb_core:/home/hossein/nav2_ws/install/nav_2d_utils:/home/hossein/nav2_ws/install/dwb_msgs:/home/hossein/nav2_ws/install/nav_2d_msgs:/home/hossein/nav2_ws/install/nav2_waypoint_follower:/home/hossein/nav2_ws/install/nav2_recoveries:/home/hossein/nav2_ws/install/nav2_planner:/home/hossein/nav2_ws/install/nav2_navfn_planner:/home/hossein/nav2_ws/install/nav2_gradient_costmap_plugin:/home/hossein/nav2_ws/install/nav2_core:/home/hossein/nav2_ws/install/costmap_queue:/home/hossein/nav2_ws/install/nav2_costmap_2d:/home/hossein/nav2_ws/install/nav2_voxel_grid:/home/hossein/nav2_ws/install/nav2_rviz_plugins:/home/hossein/nav2_ws/install/nav2_map_server:/home/hossein/nav2_ws/install/nav2_lifecycle_manager:/home/hossein/nav2_ws/install/nav2_bt_navigator:/home/hossein/nav2_ws/install/nav2_behavior_tree:/home/hossein/nav2_ws/install/nav2_amcl:/home/hossein/nav2_ws/install/nav2_util:/home/hossein/nav2_ws/install/nav2_msgs:/home/hossein/nav2_ws/install/nav2_common:/home/hossein/nav2_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/hossein/navigation2_stack/build/nav2_map_server
+[50.274s] -- Install configuration: "Release"
+[50.274s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/lib/libmap_server_core.so
+[50.276s] -- Set runtime path of "/home/hossein/navigation2_stack/install/nav2_map_server/lib/libmap_server_core.so" to ""
+[50.276s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/lib/libmap_io.so
+[50.277s] -- Set runtime path of "/home/hossein/navigation2_stack/install/nav2_map_server/lib/libmap_io.so" to ""
+[50.277s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/lib/nav2_map_server/map_server
+[50.278s] -- Set runtime path of "/home/hossein/navigation2_stack/install/nav2_map_server/lib/nav2_map_server/map_server" to ""
+[50.278s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/lib/nav2_map_server/map_saver_cli
+[50.279s] -- Set runtime path of "/home/hossein/navigation2_stack/install/nav2_map_server/lib/nav2_map_server/map_saver_cli" to ""
+[50.279s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/lib/nav2_map_server/map_saver_server
+[50.280s] -- Set runtime path of "/home/hossein/navigation2_stack/install/nav2_map_server/lib/nav2_map_server/map_saver_server" to ""
+[50.280s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/include/
+[50.280s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/include//nav2_map_server
+[50.280s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/include//nav2_map_server/map_mode.hpp
+[50.281s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/include//nav2_map_server/map_saver.hpp
+[50.281s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/include//nav2_map_server/map_server.hpp
+[50.281s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/include//nav2_map_server/map_io.hpp
+[50.281s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/launch
+[50.281s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/launch/map_saver_server.launch.py
+[50.282s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/environment/library_path.sh
+[50.282s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/environment/library_path.dsv
+[50.282s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/ament_index/resource_index/package_run_dependencies/nav2_map_server
+[50.282s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/ament_index/resource_index/parent_prefix_path/nav2_map_server
+[50.282s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/environment/ament_prefix_path.sh
+[50.283s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/environment/ament_prefix_path.dsv
+[50.283s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/environment/path.sh
+[50.283s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/environment/path.dsv
+[50.283s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/local_setup.bash
+[50.283s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/local_setup.sh
+[50.284s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/local_setup.zsh
+[50.284s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/local_setup.dsv
+[50.284s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/package.dsv
+[50.284s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/ament_index/resource_index/packages/nav2_map_server
+[50.285s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/cmake/ament_cmake_export_include_directories-extras.cmake
+[50.285s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/cmake/ament_cmake_export_libraries-extras.cmake
+[50.285s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/cmake/nav2_map_serverConfig.cmake
+[50.285s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/cmake/nav2_map_serverConfig-version.cmake
+[50.285s] -- Installing: /home/hossein/navigation2_stack/install/nav2_map_server/share/nav2_map_server/package.xml
+[50.292s] Invoked command in '/home/hossein/navigation2_stack/build/nav2_map_server' returned '0': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/nav2_ws/install/nav2_system_tests:/home/hossein/nav2_ws/install/nav2_bringup:/home/hossein/nav2_ws/install/navigation2:/home/hossein/nav2_ws/install/smac_planner:/home/hossein/nav2_ws/install/nav2_dwb_controller:/home/hossein/nav2_ws/install/nav2_controller:/home/hossein/nav2_ws/install/dwb_plugins:/home/hossein/nav2_ws/install/dwb_critics:/home/hossein/nav2_ws/install/dwb_core:/home/hossein/nav2_ws/install/nav_2d_utils:/home/hossein/nav2_ws/install/dwb_msgs:/home/hossein/nav2_ws/install/nav_2d_msgs:/home/hossein/nav2_ws/install/nav2_waypoint_follower:/home/hossein/nav2_ws/install/nav2_recoveries:/home/hossein/nav2_ws/install/nav2_planner:/home/hossein/nav2_ws/install/nav2_navfn_planner:/home/hossein/nav2_ws/install/nav2_gradient_costmap_plugin:/home/hossein/nav2_ws/install/nav2_core:/home/hossein/nav2_ws/install/costmap_queue:/home/hossein/nav2_ws/install/nav2_costmap_2d:/home/hossein/nav2_ws/install/nav2_voxel_grid:/home/hossein/nav2_ws/install/nav2_rviz_plugins:/home/hossein/nav2_ws/install/nav2_map_server:/home/hossein/nav2_ws/install/nav2_lifecycle_manager:/home/hossein/nav2_ws/install/nav2_bt_navigator:/home/hossein/nav2_ws/install/nav2_behavior_tree:/home/hossein/nav2_ws/install/nav2_amcl:/home/hossein/nav2_ws/install/nav2_util:/home/hossein/nav2_ws/install/nav2_msgs:/home/hossein/nav2_ws/install/nav2_common:/home/hossein/nav2_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/hossein/navigation2_stack/build/nav2_map_server

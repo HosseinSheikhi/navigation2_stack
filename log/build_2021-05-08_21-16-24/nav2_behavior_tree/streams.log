@@ -1,0 +1,135 @@
+[0.073s] Invoking command in '/home/hossein/navigation2_stack/build/nav2_behavior_tree': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/hossein/navigation2_stack/build/nav2_behavior_tree -- -j8 -l8
+[0.275s] [  2%] Built target nav2_spin_action_bt_node
+[0.291s] [  6%] Built target nav2_wait_action_bt_node
+[0.291s] [  6%] Built target nav2_pipeline_sequence_bt_node
+[0.323s] [  8%] Built target nav2_transform_available_condition_bt_node
+[0.337s] [ 10%] Built target nav2_behavior_tree
+[0.341s] [ 12%] Built target nav2_is_stuck_condition_bt_node
+[0.359s] [ 14%] Built target nav2_compute_path_to_pose_action_bt_node
+[0.370s] [ 16%] Built target nav2_goal_updated_condition_bt_node
+[0.499s] [ 18%] Built target nav2_goal_updater_node_bt_node
+[0.529s] [ 20%] Built target nav2_goal_reached_condition_bt_node
+[0.538s] [ 24%] Built target nav2_follow_path_action_bt_node
+[0.538s] [ 24%] Built target nav2_time_expired_condition_bt_node
+[0.556s] [ 26%] Built target nav2_distance_traveled_condition_bt_node
+[0.561s] [ 28%] Built target nav2_initial_pose_received_condition_bt_node
+[0.580s] [ 30%] Built target nav2_is_battery_low_condition_bt_node
+[0.601s] [ 32%] Built target nav2_reinitialize_global_localization_service_bt_node
+[0.701s] [ 34%] Built target nav2_rate_controller_bt_node
+[0.763s] [ 36%] Built target nav2_distance_controller_bt_node
+[0.772s] [ 38%] Built target nav2_round_robin_node_bt_node
+[0.794s] [ 40%] Built target nav2_speed_controller_bt_node
+[0.805s] [ 42%] Built target nav2_clear_costmap_service_bt_node
+[0.812s] [ 44%] Built target nav2_truncate_path_action_bt_node
+[0.823s] [ 46%] Built target nav2_navigate_to_pose_action_bt_node
+[0.850s] [ 48%] Built target nav2_back_up_action_bt_node
+[0.861s] [ 51%] Built target nav2_recovery_node_bt_node
+[0.861s] [ 53%] Built target gtest_main
+[0.873s] [ 55%] Built target gtest
+[0.965s] [ 57%] Built target test_bt_conversions
+[0.983s] [ 59%] Built target test_condition_time_expired
+[1.000s] [ 61%] Built target test_condition_is_battery_low
+[1.006s] [ 63%] Built target test_condition_initial_pose_received
+[1.007s] [ 65%] Built target test_condition_goal_updated
+[1.021s] [ 67%] Built target test_condition_distance_traveled
+[1.026s] [ 69%] Built target test_condition_is_stuck
+[1.027s] [ 71%] Built target test_condition_transform_available
+[1.067s] [ 73%] Built target test_condition_goal_reached
+[1.136s] [ 75%] Built target test_goal_updater_node
+[1.153s] [ 77%] Built target test_decorator_rate_controller
+[1.153s] [ 79%] Built target test_control_round_robin_node
+[1.171s] [ 81%] Built target test_decorator_speed_controller
+[1.171s] [ 83%] Built target test_decorator_distance_controller
+[1.174s] [ 85%] Built target test_control_recovery_node
+[1.191s] [ 87%] Built target test_control_pipeline_sequence
+[1.233s] [ 89%] Built target test_truncate_path_action
+[1.254s] [ 91%] Built target test_action_navigate_to_pose_action
+[1.261s] [ 93%] Built target test_action_follow_path_action
+[1.265s] [ 95%] Built target test_action_compute_path_to_pose_action
+[1.267s] [ 97%] Built target test_action_clear_costmap_service
+[1.276s] [100%] Built target test_action_reinitialize_global_localization_service
+[1.303s] Invoked command in '/home/hossein/navigation2_stack/build/nav2_behavior_tree' returned '0': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/hossein/navigation2_stack/build/nav2_behavior_tree -- -j8 -l8
+[1.470s] Invoking command in '/home/hossein/navigation2_stack/build/nav2_behavior_tree': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/hossein/navigation2_stack/build/nav2_behavior_tree
+[1.489s] -- Install configuration: "Release"
+[1.490s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_behavior_tree.so
+[1.492s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_compute_path_to_pose_action_bt_node.so
+[1.493s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_follow_path_action_bt_node.so
+[1.494s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_back_up_action_bt_node.so
+[1.497s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_spin_action_bt_node.so
+[1.498s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_wait_action_bt_node.so
+[1.500s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_clear_costmap_service_bt_node.so
+[1.501s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_is_stuck_condition_bt_node.so
+[1.503s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_transform_available_condition_bt_node.so
+[1.504s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_goal_reached_condition_bt_node.so
+[1.505s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_goal_updated_condition_bt_node.so
+[1.507s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_time_expired_condition_bt_node.so
+[1.508s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_distance_traveled_condition_bt_node.so
+[1.509s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_initial_pose_received_condition_bt_node.so
+[1.511s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_is_battery_low_condition_bt_node.so
+[1.512s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_reinitialize_global_localization_service_bt_node.so
+[1.514s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_rate_controller_bt_node.so
+[1.516s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_distance_controller_bt_node.so
+[1.517s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_speed_controller_bt_node.so
+[1.519s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_truncate_path_action_bt_node.so
+[1.520s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_goal_updater_node_bt_node.so
+[1.521s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_recovery_node_bt_node.so
+[1.523s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_navigate_to_pose_action_bt_node.so
+[1.524s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_pipeline_sequence_bt_node.so
+[1.525s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/lib/libnav2_round_robin_node_bt_node.so
+[1.526s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include/
+[1.526s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree
+[1.527s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/behavior_tree_engine.hpp
+[1.527s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/bt_service_node.hpp
+[1.527s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/bt_conversions.hpp
+[1.527s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/bt_action_node.hpp
+[1.527s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins
+[1.527s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/condition
+[1.528s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/condition/distance_traveled_condition.hpp
+[1.528s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/condition/is_battery_low_condition.hpp
+[1.528s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/condition/goal_reached_condition.hpp
+[1.528s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/condition/transform_available_condition.hpp
+[1.528s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/condition/is_stuck_condition.hpp
+[1.528s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/condition/time_expired_condition.hpp
+[1.528s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/condition/initial_pose_received_condition.hpp
+[1.529s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/condition/goal_updated_condition.hpp
+[1.529s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/action
+[1.529s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/action/back_up_action.hpp
+[1.529s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/action/reinitialize_global_localization_service.hpp
+[1.529s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/action/navigate_to_pose_action.hpp
+[1.530s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/action/follow_path_action.hpp
+[1.530s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/action/wait_action.hpp
+[1.530s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/action/truncate_path_action.hpp
+[1.530s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/action/compute_path_to_pose_action.hpp
+[1.530s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/action/spin_action.hpp
+[1.530s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/action/clear_costmap_service.hpp
+[1.530s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/control
+[1.531s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/control/recovery_node.hpp
+[1.531s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/control/pipeline_sequence.hpp
+[1.531s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/control/round_robin_node.hpp
+[1.531s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/decorator
+[1.531s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/decorator/speed_controller.hpp
+[1.531s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/decorator/distance_controller.hpp
+[1.531s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/decorator/goal_updater_node.hpp
+[1.532s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/include//nav2_behavior_tree/plugins/decorator/rate_controller.hpp
+[1.532s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/nav2_tree_nodes.xml
+[1.532s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/environment/library_path.sh
+[1.532s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/environment/library_path.dsv
+[1.532s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/ament_index/resource_index/package_run_dependencies/nav2_behavior_tree
+[1.532s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/ament_index/resource_index/parent_prefix_path/nav2_behavior_tree
+[1.532s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/environment/ament_prefix_path.sh
+[1.533s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/environment/ament_prefix_path.dsv
+[1.533s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/environment/path.sh
+[1.533s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/environment/path.dsv
+[1.533s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/local_setup.bash
+[1.533s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/local_setup.sh
+[1.533s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/local_setup.zsh
+[1.533s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/local_setup.dsv
+[1.533s] -- Installing: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/package.dsv
+[1.534s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/ament_index/resource_index/packages/nav2_behavior_tree
+[1.534s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.534s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/cmake/ament_cmake_export_libraries-extras.cmake
+[1.534s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.534s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/cmake/nav2_behavior_treeConfig.cmake
+[1.534s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/cmake/nav2_behavior_treeConfig-version.cmake
+[1.535s] -- Up-to-date: /home/hossein/navigation2_stack/install/nav2_behavior_tree/share/nav2_behavior_tree/package.xml
+[1.538s] Invoked command in '/home/hossein/navigation2_stack/build/nav2_behavior_tree' returned '0': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/nav2_util:/home/hossein/navigation2_stack/install/nav2_msgs:/home/hossein/navigation2_stack/install/nav2_common:/home/hossein/turtlebot3_ws/install/turtlebot3_simulations:/home/hossein/turtlebot3_ws/install/turtlebot3_gazebo:/home/hossein/turtlebot3_ws/install/turtlebot3_fake_node:/home/hossein/dev_ws/install/vad_utils:/home/hossein/dev_ws/install/user_interface:/home/hossein/dev_ws/install/tf_publisher:/home/hossein/dev_ws/install/overhead_camera_service:/home/hossein/dev_ws/install/nf2:/home/hossein/dev_ws/install/global_planner:/home/hossein/dev_ws/install/custom_msg_srv:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/nav2_util/lib:/home/hossein/navigation2_stack/install/nav2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/nav2_msgs/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/nav2_common/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/hossein/navigation2_stack/build/nav2_behavior_tree

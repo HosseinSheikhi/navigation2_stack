@@ -1,0 +1,6 @@
+source;share/ceiling_segmentation/hook/pythonpath.ps1
+source;share/ceiling_segmentation/hook/pythonpath.dsv
+source;share/ceiling_segmentation/hook/pythonpath.sh
+source;share/ceiling_segmentation/hook/ament_prefix_path.ps1
+source;share/ceiling_segmentation/hook/ament_prefix_path.dsv
+source;share/ceiling_segmentation/hook/ament_prefix_path.sh

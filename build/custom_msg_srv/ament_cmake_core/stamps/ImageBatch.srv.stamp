@@ -1,0 +1,3 @@
+int64 overhead_cameras_num
+---
+sensor_msgs/Image[3] image

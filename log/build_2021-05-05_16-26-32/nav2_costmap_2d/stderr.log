@@ -1,0 +1,17 @@
+CMake Error at CMakeLists.txt:26 (find_package):
+  By not providing "Findcustom_roi_srv.cmake" in CMAKE_MODULE_PATH this
+  project has asked CMake to find a package configuration file provided by
+  "custom_roi_srv", but CMake did not find one.
+
+  Could not find a package configuration file provided by "custom_roi_srv"
+  with any of the following names:
+
+    custom_roi_srvConfig.cmake
+    custom_roi_srv-config.cmake
+
+  Add the installation prefix of "custom_roi_srv" to CMAKE_PREFIX_PATH or set
+  "custom_roi_srv_DIR" to a directory containing one of the above files.  If
+  "custom_roi_srv" provides a separate development package or SDK, be sure it
+  has been installed.
+
+

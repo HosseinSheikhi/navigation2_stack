@@ -1,0 +1,20 @@
+[01m[K/home/hossein/navigation2_stack/navigation2/nav2_ceiling_perception_plugin/src/ceiling_layer.cpp:[m[K In member function ‘[01m[Kvoid nav2_ceiling_perception_plugin::CeilingLayer::handle_ceiling_roi_service(std::shared_ptr<custom_roi_srv::srv::ROI_Request_<std::allocator<void> > >, std::shared_ptr<custom_roi_srv::srv::ROI_Response_<std::allocator<void> > >)[m[K’:
+[01m[K/home/hossein/navigation2_stack/navigation2/nav2_ceiling_perception_plugin/src/ceiling_layer.cpp:49:130:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krequest[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ eption_plugin::CeilingLayer::handle_ceiling_roi_service(std::shared_ptr<custom_roi_srv::srv::ROI::Request> [01;35m[Krequest[m[K,
+                                                                                                            [01;35m[K^~~~~~~[m[K
+[01m[K/home/hossein/navigation2_stack/navigation2/nav2_ceiling_perception_plugin/src/ceiling_layer.cpp:[m[K In member function ‘[01m[Kvirtual void nav2_ceiling_perception_plugin::CeilingLayer::updateCosts(nav2_costmap_2d::Costmap2D&, int, int, int, int)[m[K’:
+[01m[K/home/hossein/navigation2_stack/navigation2/nav2_ceiling_perception_plugin/src/ceiling_layer.cpp:128:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbiased_index[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   unsigned int [01;35m[Kbiased_index[m[K = master_grid.getIndex(biased_x, biased_y);
+                [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/hossein/navigation2_stack/navigation2/nav2_ceiling_perception_plugin/src/ceiling_layer.cpp:105:49:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmin_i[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   nav2_costmap_2d::Costmap2D & master_grid, int [01;35m[Kmin_i[m[K, int min_j,
+                                                 [01;35m[K^~~~~[m[K
+[01m[K/home/hossein/navigation2_stack/navigation2/nav2_ceiling_perception_plugin/src/ceiling_layer.cpp:105:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmin_j[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   nav2_costmap_2d::Costmap2D & master_grid, int min_i, int [01;35m[Kmin_j[m[K,
+                                                            [01;35m[K^~~~~[m[K
+[01m[K/home/hossein/navigation2_stack/navigation2/nav2_ceiling_perception_plugin/src/ceiling_layer.cpp:106:7:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmax_i[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   int [01;35m[Kmax_i[m[K,
+       [01;35m[K^~~~~[m[K
+[01m[K/home/hossein/navigation2_stack/navigation2/nav2_ceiling_perception_plugin/src/ceiling_layer.cpp:107:7:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmax_j[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   int [01;35m[Kmax_j[m[K)
+       [01;35m[K^~~~~[m[K

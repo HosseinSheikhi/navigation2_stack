@@ -1,0 +1,41 @@
+[0.649s] Invoking command in '/home/hossein/navigation2_stack/ceiling_segmentation': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/custom_msg_srv:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/custom_msg_srv:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/custom_msg_srv/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/ceiling_segmentation/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/custom_msg_srv/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/ceiling_segmentation build --build-base /home/hossein/navigation2_stack/build/ceiling_segmentation/build install --prefix /home/hossein/navigation2_stack/install/ceiling_segmentation --record /home/hossein/navigation2_stack/build/ceiling_segmentation/install.log --single-version-externally-managed
+[1.132s] running egg_info
+[1.133s] creating ../build/ceiling_segmentation/ceiling_segmentation.egg-info
+[1.134s] writing ../build/ceiling_segmentation/ceiling_segmentation.egg-info/PKG-INFO
+[1.134s] writing dependency_links to ../build/ceiling_segmentation/ceiling_segmentation.egg-info/dependency_links.txt
+[1.135s] writing entry points to ../build/ceiling_segmentation/ceiling_segmentation.egg-info/entry_points.txt
+[1.135s] writing requirements to ../build/ceiling_segmentation/ceiling_segmentation.egg-info/requires.txt
+[1.136s] writing top-level names to ../build/ceiling_segmentation/ceiling_segmentation.egg-info/top_level.txt
+[1.139s] writing manifest file '../build/ceiling_segmentation/ceiling_segmentation.egg-info/SOURCES.txt'
+[1.201s] reading manifest file '../build/ceiling_segmentation/ceiling_segmentation.egg-info/SOURCES.txt'
+[1.203s] writing manifest file '../build/ceiling_segmentation/ceiling_segmentation.egg-info/SOURCES.txt'
+[1.204s] running build
+[1.204s] running build_py
+[1.204s] creating /home/hossein/navigation2_stack/build/ceiling_segmentation/build
+[1.205s] creating /home/hossein/navigation2_stack/build/ceiling_segmentation/build/lib
+[1.205s] creating /home/hossein/navigation2_stack/build/ceiling_segmentation/build/lib/ceiling_segmentation
+[1.205s] copying ceiling_segmentation/train.py -> /home/hossein/navigation2_stack/build/ceiling_segmentation/build/lib/ceiling_segmentation
+[1.206s] copying ceiling_segmentation/inference.py -> /home/hossein/navigation2_stack/build/ceiling_segmentation/build/lib/ceiling_segmentation
+[1.206s] copying ceiling_segmentation/__init__.py -> /home/hossein/navigation2_stack/build/ceiling_segmentation/build/lib/ceiling_segmentation
+[1.206s] running install
+[1.208s] running install_lib
+[1.210s] creating /home/hossein/navigation2_stack/install/ceiling_segmentation/lib/python3.8/site-packages/ceiling_segmentation
+[1.210s] copying /home/hossein/navigation2_stack/build/ceiling_segmentation/build/lib/ceiling_segmentation/train.py -> /home/hossein/navigation2_stack/install/ceiling_segmentation/lib/python3.8/site-packages/ceiling_segmentation
+[1.226s] copying /home/hossein/navigation2_stack/build/ceiling_segmentation/build/lib/ceiling_segmentation/inference.py -> /home/hossein/navigation2_stack/install/ceiling_segmentation/lib/python3.8/site-packages/ceiling_segmentation
+[1.226s] copying /home/hossein/navigation2_stack/build/ceiling_segmentation/build/lib/ceiling_segmentation/__init__.py -> /home/hossein/navigation2_stack/install/ceiling_segmentation/lib/python3.8/site-packages/ceiling_segmentation
+[1.227s] byte-compiling /home/hossein/navigation2_stack/install/ceiling_segmentation/lib/python3.8/site-packages/ceiling_segmentation/train.py to train.cpython-38.pyc
+[1.229s] byte-compiling /home/hossein/navigation2_stack/install/ceiling_segmentation/lib/python3.8/site-packages/ceiling_segmentation/inference.py to inference.cpython-38.pyc
+[1.230s] byte-compiling /home/hossein/navigation2_stack/install/ceiling_segmentation/lib/python3.8/site-packages/ceiling_segmentation/__init__.py to __init__.cpython-38.pyc
+[1.230s] running install_data
+[1.231s] creating /home/hossein/navigation2_stack/install/ceiling_segmentation/share/ament_index
+[1.231s] creating /home/hossein/navigation2_stack/install/ceiling_segmentation/share/ament_index/resource_index
+[1.232s] creating /home/hossein/navigation2_stack/install/ceiling_segmentation/share/ament_index/resource_index/packages
+[1.232s] copying resource/ceiling_segmentation -> /home/hossein/navigation2_stack/install/ceiling_segmentation/share/ament_index/resource_index/packages
+[1.232s] copying package.xml -> /home/hossein/navigation2_stack/install/ceiling_segmentation/share/ceiling_segmentation
+[1.232s] running install_egg_info
+[1.235s] Copying ../build/ceiling_segmentation/ceiling_segmentation.egg-info to /home/hossein/navigation2_stack/install/ceiling_segmentation/lib/python3.8/site-packages/ceiling_segmentation-0.0.0-py3.8.egg-info
+[1.237s] running install_scripts
+[1.273s] Installing inference script to /home/hossein/navigation2_stack/install/ceiling_segmentation/lib/ceiling_segmentation
+[1.274s] Installing train script to /home/hossein/navigation2_stack/install/ceiling_segmentation/lib/ceiling_segmentation
+[1.275s] writing list of installed files to '/home/hossein/navigation2_stack/build/ceiling_segmentation/install.log'
+[1.331s] Invoked command in '/home/hossein/navigation2_stack/ceiling_segmentation' returned '0': AMENT_PREFIX_PATH=/home/hossein/navigation2_stack/install/custom_msg_srv:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/hossein/navigation2_stack/install/custom_msg_srv:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/hossein/navigation2_stack/install/custom_msg_srv/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/hossein/navigation2_stack/install/ceiling_segmentation/lib/python3.8/site-packages:/home/hossein/navigation2_stack/install/custom_msg_srv/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/ceiling_segmentation build --build-base /home/hossein/navigation2_stack/build/ceiling_segmentation/build install --prefix /home/hossein/navigation2_stack/install/ceiling_segmentation --record /home/hossein/navigation2_stack/build/ceiling_segmentation/install.log --single-version-externally-managed

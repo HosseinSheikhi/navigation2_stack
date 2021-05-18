@@ -1,0 +1,3 @@
+[console_scripts]
+ceiling_segmentation_start = ceiling_segmentation.main:main
+

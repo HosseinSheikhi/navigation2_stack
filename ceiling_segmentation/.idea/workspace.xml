@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f841759d-de5f-4ffe-a2a3-e1e00b6476d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ceiling_segmentation/DenseNet/models/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ceiling_segmentation/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ceiling_segmentation/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/ceiling_segmentation_params.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launch/ceiling_segmentation_launch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/Decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/Decoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/Encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/Encoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/EncoderDecoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/EncoderDecoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/VGGBlockWithBN.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/VGGBlkWithBN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/VggBlock.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/VGGBlk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/vgg16_train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/UNET/VGG16/vgg16_inference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceiling_segmentation/UNET/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/UNET/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceiling_segmentation/inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/DenseNet/models/densenet_inference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceiling_segmentation/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ceiling_segmentation/DenseNet/models/densenet_train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-    </list>
+    <list default="true" id="f841759d-de5f-4ffe-a2a3-e1e00b6476d7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,8 +48,16 @@
       <workItem from="1620067778321" duration="5301000" />
       <workItem from="1620258693519" duration="11898000" />
       <workItem from="1620278729675" duration="1678000" />
-      <workItem from="1620356302431" duration="4959000" />
+      <workItem from="1620356302431" duration="5593000" />
     </task>
+    <task id="LOCAL-00001" summary="Ceiling segmentation still under develop">
+      <created>1620502912070</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620502912070</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,5 +74,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ceiling segmentation still under develop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ceiling segmentation still under develop" />
   </component>
 </project>

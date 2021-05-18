@@ -1,0 +1,216 @@
+[0.039s] Invoking command in '/home/hossein/navigation2_stack/build/custom_roi_srv': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy /usr/bin/cmake /home/hossein/navigation2_stack/navigation2/custom_roi_srv -DCMAKE_INSTALL_PREFIX=/home/hossein/navigation2_stack/install/custom_roi_srv
+[0.321s] -- The C compiler identification is GNU 7.5.0
+[0.541s] -- The CXX compiler identification is GNU 7.5.0
+[0.550s] -- Check for working C compiler: /usr/bin/cc
+[0.658s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.660s] -- Detecting C compiler ABI info
+[0.768s] -- Detecting C compiler ABI info - done
+[0.784s] -- Detecting C compile features
+[0.785s] -- Detecting C compile features - done
+[0.787s] -- Check for working CXX compiler: /usr/bin/c++
+[0.929s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.930s] -- Detecting CXX compiler ABI info
+[1.063s] -- Detecting CXX compiler ABI info - done
+[1.079s] -- Detecting CXX compile features
+[1.080s] -- Detecting CXX compile features - done
+[1.085s] -- Found ament_cmake: 0.9.8 (/opt/ros/foxy/share/ament_cmake/cmake)
+[1.126s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.5", minimum required is "3") 
+[1.126s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.473s] -- Found sensor_msgs: 2.0.4 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[1.534s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.549s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.720s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[1.781s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.948s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.309s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[2.368s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.5") 
+[2.553s] -- Found ament_cmake_ros: 0.9.1 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+[2.715s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.731s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.764s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.5", minimum required is "3.5") 
+[2.767s] -- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+[2.813s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable version "3.8.5", minimum required is "3.5") 
+[2.813s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.813s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[2.813s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+[2.841s] -- Found PythonExtra: .so  
+[2.940s] -- Configuring done
+[2.989s] -- Generating done
+[2.994s] -- Build files have been written to: /home/hossein/navigation2_stack/build/custom_roi_srv
+[3.003s] Invoked command in '/home/hossein/navigation2_stack/build/custom_roi_srv' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy /usr/bin/cmake /home/hossein/navigation2_stack/navigation2/custom_roi_srv -DCMAKE_INSTALL_PREFIX=/home/hossein/navigation2_stack/install/custom_roi_srv
+[3.006s] Invoking command in '/home/hossein/navigation2_stack/build/custom_roi_srv': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy /usr/bin/cmake --build /home/hossein/navigation2_stack/build/custom_roi_srv -- -j8 -l8
+[3.059s] [35m[1mScanning dependencies of target custom_roi_srv__cpp[0m
+[3.060s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[3.074s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[3.384s] [  6%] Built target custom_roi_srv__cpp
+[3.405s] [ 12%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.405s] [ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[3.416s] [ 16%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[3.560s] [35m[1mScanning dependencies of target custom_roi_srv__rosidl_generator_c[0m
+[3.584s] [ 19%] [32mBuilding C object CMakeFiles/custom_roi_srv__rosidl_generator_c.dir/rosidl_generator_c/custom_roi_srv/srv/detail/roi__functions.c.o[0m
+[3.692s] [ 22%] [32m[1mLinking C shared library libcustom_roi_srv__rosidl_generator_c.so[0m
+[3.760s] [ 22%] Built target custom_roi_srv__rosidl_generator_c
+[3.789s] [ 25%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.807s] [ 29%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.823s] [35m[1mScanning dependencies of target custom_roi_srv__rosidl_typesupport_cpp[0m
+[3.880s] [ 32%] [32mBuilding CXX object CMakeFiles/custom_roi_srv__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_roi_srv/srv/roi__type_support.cpp.o[0m
+[3.887s] [35m[1mScanning dependencies of target custom_roi_srv__rosidl_typesupport_introspection_cpp[0m
+[3.932s] [ 35%] [32mBuilding CXX object CMakeFiles/custom_roi_srv__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_roi_srv/srv/detail/roi__type_support.cpp.o[0m
+[4.128s] [35m[1mScanning dependencies of target custom_roi_srv__rosidl_typesupport_fastrtps_cpp[0m
+[4.225s] [ 38%] [32mBuilding CXX object CMakeFiles/custom_roi_srv__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_roi_srv/srv/detail/dds_fastrtps/roi__type_support.cpp.o[0m
+[4.433s] [35m[1mScanning dependencies of target custom_roi_srv__rosidl_typesupport_c[0m
+[4.467s] [35m[1mScanning dependencies of target custom_roi_srv__rosidl_typesupport_introspection_c[0m
+[4.472s] [ 41%] [32m[1mLinking CXX shared library libcustom_roi_srv__rosidl_typesupport_cpp.so[0m
+[4.537s] [ 45%] [32mBuilding CXX object CMakeFiles/custom_roi_srv__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_roi_srv/srv/roi__type_support.cpp.o[0m
+[4.538s] [ 48%] [32mBuilding C object CMakeFiles/custom_roi_srv__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_roi_srv/srv/detail/roi__type_support.c.o[0m
+[4.551s] [ 51%] [32m[1mLinking CXX shared library libcustom_roi_srv__rosidl_typesupport_introspection_cpp.so[0m
+[4.608s] [ 54%] [32m[1mLinking C shared library libcustom_roi_srv__rosidl_typesupport_introspection_c.so[0m
+[4.681s] [ 54%] Built target custom_roi_srv__rosidl_typesupport_cpp
+[4.716s] [ 58%] [32m[1mLinking CXX shared library libcustom_roi_srv__rosidl_typesupport_c.so[0m
+[4.751s] [ 58%] Built target custom_roi_srv__rosidl_typesupport_introspection_c
+[4.775s] [ 58%] Built target custom_roi_srv__rosidl_typesupport_introspection_cpp
+[4.944s] [ 58%] Built target custom_roi_srv__rosidl_typesupport_c
+[5.399s] [ 61%] [32m[1mLinking CXX shared library libcustom_roi_srv__rosidl_typesupport_fastrtps_cpp.so[0m
+[5.851s] [ 61%] Built target custom_roi_srv__rosidl_typesupport_fastrtps_cpp
+[5.944s] [ 64%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[7.059s] [35m[1mScanning dependencies of target custom_roi_srv__rosidl_typesupport_fastrtps_c[0m
+[7.163s] [ 67%] [32mBuilding CXX object CMakeFiles/custom_roi_srv__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_roi_srv/srv/detail/roi__type_support_c.cpp.o[0m
+[8.068s] [ 70%] [32m[1mLinking CXX shared library libcustom_roi_srv__rosidl_typesupport_fastrtps_c.so[0m
+[8.459s] [ 70%] Built target custom_roi_srv__rosidl_typesupport_fastrtps_c
+[8.540s] [35m[1mScanning dependencies of target custom_roi_srv[0m
+[8.616s] [ 70%] Built target custom_roi_srv
+[8.670s] [35m[1mScanning dependencies of target custom_roi_srv__py[0m
+[8.739s] [ 74%] [34m[1mGenerating Python code for ROS interfaces[0m
+[10.274s] [ 74%] Built target custom_roi_srv__py
+[10.297s] [35m[1mScanning dependencies of target custom_roi_srv__python[0m
+[10.354s] [ 77%] [32mBuilding C object CMakeFiles/custom_roi_srv__python.dir/rosidl_generator_py/custom_roi_srv/srv/_roi_s.c.o[0m
+[10.555s] [ 80%] [32m[1mLinking C shared library rosidl_generator_py/custom_roi_srv/libcustom_roi_srv__python.so[0m
+[10.604s] [ 80%] Built target custom_roi_srv__python
+[10.623s] [35m[1mScanning dependencies of target custom_roi_srv__rosidl_typesupport_c__pyext[0m
+[10.624s] [35m[1mScanning dependencies of target custom_roi_srv__rosidl_typesupport_introspection_c__pyext[0m
+[10.625s] [35m[1mScanning dependencies of target custom_roi_srv__rosidl_typesupport_fastrtps_c__pyext[0m
+[10.662s] [ 83%] [32mBuilding C object CMakeFiles/custom_roi_srv__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/custom_roi_srv/_custom_roi_srv_s.ep.rosidl_typesupport_c.c.o[0m
+[10.664s] [ 87%] [32mBuilding C object CMakeFiles/custom_roi_srv__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/custom_roi_srv/_custom_roi_srv_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[10.664s] [ 90%] [32mBuilding C object CMakeFiles/custom_roi_srv__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/custom_roi_srv/_custom_roi_srv_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[10.797s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/custom_roi_srv/custom_roi_srv_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[10.804s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/custom_roi_srv/custom_roi_srv_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[10.805s] [100%] [32m[1mLinking CXX shared library rosidl_generator_py/custom_roi_srv/custom_roi_srv_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[10.868s] [100%] Built target custom_roi_srv__rosidl_typesupport_c__pyext
+[10.887s] [100%] Built target custom_roi_srv__rosidl_typesupport_introspection_c__pyext
+[10.932s] [100%] Built target custom_roi_srv__rosidl_typesupport_fastrtps_c__pyext
+[10.952s] Invoked command in '/home/hossein/navigation2_stack/build/custom_roi_srv' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy /usr/bin/cmake --build /home/hossein/navigation2_stack/build/custom_roi_srv -- -j8 -l8
+[11.085s] Invoking command in '/home/hossein/navigation2_stack/build/custom_roi_srv': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy /usr/bin/cmake --install /home/hossein/navigation2_stack/build/custom_roi_srv
+[11.102s] -- Install configuration: ""
+[11.103s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/ament_index/resource_index/rosidl_interfaces/custom_roi_srv
+[11.103s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv
+[11.103s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv
+[11.104s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail
+[11.104s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__functions.c
+[11.104s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__functions.h
+[11.105s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__struct.h
+[11.105s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__type_support.h
+[11.105s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/roi.h
+[11.105s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/msg
+[11.105s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/msg/rosidl_generator_c__visibility_control.h
+[11.105s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/environment/library_path.sh
+[11.106s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/environment/library_path.dsv
+[11.106s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_generator_c.so
+[11.106s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_generator_c.so" to ""
+[11.106s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv
+[11.106s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv
+[11.107s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail
+[11.107s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__rosidl_typesupport_fastrtps_c.h
+[11.107s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/msg
+[11.107s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[11.107s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_fastrtps_c.so
+[11.107s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_fastrtps_c.so" to ""
+[11.108s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv
+[11.108s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv
+[11.108s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail
+[11.108s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__rosidl_typesupport_fastrtps_cpp.hpp
+[11.108s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/dds_fastrtps
+[11.109s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/msg
+[11.109s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[11.109s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_fastrtps_cpp.so
+[11.109s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_fastrtps_cpp.so" to ""
+[11.109s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv
+[11.110s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv
+[11.110s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail
+[11.110s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__rosidl_typesupport_introspection_c.h
+[11.110s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__type_support.c
+[11.110s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/msg
+[11.110s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[11.111s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_introspection_c.so
+[11.111s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_introspection_c.so" to ""
+[11.111s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_c.so
+[11.112s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_c.so" to ""
+[11.113s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv
+[11.113s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv
+[11.113s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail
+[11.113s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__builder.hpp
+[11.114s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__traits.hpp
+[11.114s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__struct.hpp
+[11.114s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/roi.hpp
+[11.114s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv
+[11.114s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv
+[11.114s] -- Up-to-date: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail
+[11.115s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__type_support.cpp
+[11.115s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/include/custom_roi_srv/srv/detail/roi__rosidl_typesupport_introspection_cpp.hpp
+[11.115s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_introspection_cpp.so
+[11.115s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_introspection_cpp.so" to ""
+[11.115s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_cpp.so
+[11.116s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__rosidl_typesupport_cpp.so" to ""
+[11.116s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/environment/pythonpath.sh
+[11.116s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/environment/pythonpath.dsv
+[11.116s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/__init__.py
+[11.180s] Compiling '/home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/__init__.py'...
+[11.189s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/srv
+[11.189s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/srv/__init__.py
+[11.190s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/srv/_roi.py
+[11.190s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/srv/_roi_s.c
+[11.191s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/custom_roi_srv_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[11.192s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/custom_roi_srv_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""
+[11.193s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/custom_roi_srv_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[11.194s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/custom_roi_srv_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""
+[11.195s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/custom_roi_srv_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[11.196s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/python3.8/site-packages/custom_roi_srv/custom_roi_srv_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""
+[11.196s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__python.so
+[11.197s] -- Set runtime path of "/home/hossein/navigation2_stack/install/custom_roi_srv/lib/libcustom_roi_srv__python.so" to ""
+[11.197s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/srv/ROI.idl
+[11.197s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/srv/ROI.srv
+[11.197s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/srv/ROI_Request.msg
+[11.197s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/srv/ROI_Response.msg
+[11.198s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/ament_index/resource_index/package_run_dependencies/custom_roi_srv
+[11.198s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/ament_index/resource_index/parent_prefix_path/custom_roi_srv
+[11.198s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/environment/ament_prefix_path.sh
+[11.198s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/environment/ament_prefix_path.dsv
+[11.199s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/environment/path.sh
+[11.199s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/environment/path.dsv
+[11.199s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/local_setup.bash
+[11.200s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/local_setup.sh
+[11.200s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/local_setup.zsh
+[11.200s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/local_setup.dsv
+[11.200s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/package.dsv
+[11.201s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/ament_index/resource_index/packages/custom_roi_srv
+[11.201s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_generator_cExport.cmake
+[11.201s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_generator_cExport-noconfig.cmake
+[11.201s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_typesupport_introspection_cExport.cmake
+[11.201s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[11.202s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_typesupport_cExport.cmake
+[11.202s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_typesupport_cExport-noconfig.cmake
+[11.202s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_generator_cppExport.cmake
+[11.203s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_typesupport_introspection_cppExport.cmake
+[11.203s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[11.203s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_typesupport_cppExport.cmake
+[11.203s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srv__rosidl_typesupport_cppExport-noconfig.cmake
+[11.204s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/rosidl_cmake-extras.cmake
+[11.204s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/ament_cmake_export_dependencies-extras.cmake
+[11.204s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/ament_cmake_export_libraries-extras.cmake
+[11.204s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/ament_cmake_export_targets-extras.cmake
+[11.205s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/ament_cmake_export_include_directories-extras.cmake
+[11.205s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[11.205s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[11.205s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srvConfig.cmake
+[11.205s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/cmake/custom_roi_srvConfig-version.cmake
+[11.206s] -- Installing: /home/hossein/navigation2_stack/install/custom_roi_srv/share/custom_roi_srv/package.xml
+[11.212s] Invoked command in '/home/hossein/navigation2_stack/build/custom_roi_srv' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hossein/nav2_ws/install/nav2_gazebo_spawner:/home/hossein/nav2_ws/install/image_segmentation:/home/hossein/dev_ws/install/py_pubsub:/home/hossein/dev_ws/install/image_segmentation:/opt/ros/foxy /usr/bin/cmake --install /home/hossein/navigation2_stack/build/custom_roi_srv
