@@ -1,1 +1,0 @@
-int64 overhead_cameras_num

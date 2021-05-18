@@ -1,3 +1,4 @@
+ceiling_segmentation/ceiling_segmentation/data/*
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles

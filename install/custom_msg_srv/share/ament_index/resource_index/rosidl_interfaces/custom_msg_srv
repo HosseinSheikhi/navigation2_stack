@@ -1,4 +1,0 @@
-srv/ImageBatch.idl
-srv/ImageBatch.srv
-srv/ImageBatch_Request.msg
-srv/ImageBatch_Response.msg
